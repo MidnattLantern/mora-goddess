@@ -16,9 +16,13 @@ const MainView = () => {
         <div className={Styles.Foundation}>
 
         <PayPalInfoView>
-            <h1>{"PayPal:"}</h1>
-            <p>{"Alma Isaksson"}</p>
-            <p>{"@midnattlantern"}</p>
+            <h1 className={Styles.PayPalHeader}>{"PayPal:"}</h1>
+            <div className={Styles.PayPalInfoTags}>
+              <p>{"Alma Isaksson"}</p>
+              <p>{"@midnattlantern"}</p>
+              <p>{"isakvent@outlook.com"}</p>
+              <p className={Styles.ShowQRCodeButton}>{"Show QR code"}</p>
+            </div>
         </PayPalInfoView>
 
         <h1>{"View from inside"}</h1>
