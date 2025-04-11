@@ -1,0 +1,61 @@
+# macOS-specific
+.DS_Store
+
+# Node modules
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+jspm_packages/
+
+# Testing
+coverage/
+*.lcov
+
+# dotenv environment variables
+.env
+.env.*.local
+
+# Editor directories and files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# React Native
+.expo/
+
+# Misc
+*.tgz
+.pnp.*
+.cache/
+.eslintcache
+.next/
+out/
+.storybook/
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Mac system files
+Icon?
+._*
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional: ignore these if you're using them
+*.log
+*.bak
+*.tmp
+
+# Optional: VSCode settings (if you want to keep local settings private)
+.vscode/settings.json
