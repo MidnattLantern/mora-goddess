@@ -1,38 +1,18 @@
-import { ReactNode } from "react";
 import Styles from "./App.module.css";
-import SmallViewFromInside from "../src/assets/downloadable/mora-temple-v1-1mb.jpg";
-import LargeViewFromInside from "../src/assets/downloadable/mora-temple-v1-16mb.png";
+import Footer from "./pages/footer/Footer";
+import MainView from "./pages/mainView/MainView";
 
 function App() {
-
-  const PayPalInfoView = ({ children }: { children: ReactNode }) => {
-    return(
-      <div className={Styles.PayPalInfoView}>
-        {children}
-      </div>
-    )
-  };
 
   return (<>
     <div className={Styles.Foundation}>
 
-    <PayPalInfoView>
-      <h1>{"PayPal:"}</h1>
-      <p>{"Alma Isaksson"}</p>
-      <p>{"@midnattlantern"}</p>
-    </PayPalInfoView>
-
-      <h1>{"View from inside"}</h1>
-      <img className={Styles.ImageAppearance} src={SmallViewFromInside} alt={"Failed to load image: View from inside"}/>
-
-      <div className={Styles.DownloadButtonsView}>
-        <a className={Styles.DownloadButton} href={SmallViewFromInside} download="Mora Goddess V1">
-          {"Download as jpg 1mb"}
-        </a>
-        <a className={Styles.DownloadButton} href={LargeViewFromInside} download="Mora Goddess V1">
-          {"Download as png 16mb"}
-        </a>
-      </div>
+    <div className={Styles.MainView}>
+      <MainView />
+    </div>
+    <div className={Styles.FooterView}>
+      <Footer />
+    </div>
       
     </div>
   </>)

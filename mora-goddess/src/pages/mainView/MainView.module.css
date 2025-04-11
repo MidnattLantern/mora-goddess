@@ -1,0 +1,41 @@
+.Foundation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .PayPalInfoView {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark);
+    width: 500px;
+    height: 50px;
+    border-radius: 15px;
+  }
+  
+  .ImageAppearance {
+    width: 500px;
+    height: auto;
+    border-radius: 15px;
+  }
+  
+  .DownloadButtonsView {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .DownloadButton {
+    background-color: var(--dark);
+    width: 250px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--theme);
+  }
+  .DownloadButton:hover {
+    color: var(--theme-hover);
+  }
