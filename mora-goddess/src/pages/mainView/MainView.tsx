@@ -2,8 +2,11 @@ import { ReactNode } from "react";
 import Styles from "./MainView.module.css";
 import SmallViewFromInside from "../../assets/downloadable/mora-temple-v1-1mb.jpg"
 import LargeViewFromInside from "../../assets/downloadable/mora-temple-v1-16mb.png";
+import { usePayPalContext } from "../../contexts/usePayPalContext";
 
 const MainView = () => {
+  const { setDisplayQRCode } = usePayPalContext();
+
     const PayPalInfoView = ({ children }: { children: ReactNode }) => {
         return(
           <div className={Styles.PayPalInfoView}>
@@ -21,7 +24,7 @@ const MainView = () => {
               <p>{"Alma Isaksson"}</p>
               <p>{"@midnattlantern"}</p>
               <p>{"isakvent@outlook.com"}</p>
-              <p className={Styles.ShowQRCodeButton}>{"Show QR code"}</p>
+              <button onClick={() => {setDisplayQRCode(true)}} className={Styles.ShowQRCodeButton}>{"Show QR code"}</button>
             </div>
         </PayPalInfoView>
 
