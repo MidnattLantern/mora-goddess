@@ -24,6 +24,7 @@
   --theme: rgb(150, 150, 200);
   --theme-hover: rgb(75, 75, 150);
   --dark: rgb(20, 20, 20);
+  --dark-background: #242424;
 }
 
 p, h1 {

@@ -17,7 +17,7 @@ const PayPalQR = () => {
         <div className={Styles.Foundation}>
             <div className={Styles.ScanView}>
                 <CloseButton />
-                <h1>Scan QR code</h1>
+                <h1 className={Styles.Header}>Scan QR code</h1>
                 <img className={Styles.QRCodeAppearance} src={QRCode} alt="Couldn't load QR code"/>
             </div>
         </div>
