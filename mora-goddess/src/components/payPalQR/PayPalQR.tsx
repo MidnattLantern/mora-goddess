@@ -8,7 +8,7 @@ const PayPalQR = () => {
     const CloseButton = () => {
         return (
             <button onClick={() => {setDisplayQRCode(false)}} className={Styles.CloseButton}>
-                <p>{"x"}</p>
+                {"x"}
             </button>
         )
     };

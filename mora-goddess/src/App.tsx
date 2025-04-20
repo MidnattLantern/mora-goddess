@@ -3,6 +3,7 @@ import PayPalQR from "./components/payPalQR/PayPalQR";
 import Footer from "./pages/footer/Footer";
 import MainView from "./pages/mainView/MainView";
 import { usePayPalContext } from "./contexts/usePayPalContext";
+import Wallpaper from "./components/wallpaper/Wallpaper";
 
 function App() {
   const { displayQRCode } = usePayPalContext();
@@ -20,6 +21,8 @@ function App() {
     <div className={Styles.FooterView}>
       <Footer />
     </div>
+
+    <Wallpaper />
       
     </div>
   </>)

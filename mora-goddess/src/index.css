@@ -22,12 +22,26 @@
   -moz-osx-font-smoothing: grayscale;
 
   --theme: rgb(150, 150, 200);
-  --theme-hover: rgb(75, 75, 150);
+  --theme-hover: rgb(200, 200, 250);
   --dark: rgb(20, 20, 20);
+  --dark-transparent: rgba(20, 20, 20, 0.5);
   --dark-background: #242424;
+  --light: rgb(200, 200, 200);
+  --light-transparent: rgb(200, 200, 200, 0.5);
 }
 
 p, h1 {
   padding: 0px;
   margin: 0px;
+  color: var(--light);
+  text-shadow: 0px 2.5px 2.5px var(--dark);
+}
+a {
+  color: var(--theme);
+  text-decoration: none;
+  text-shadow: 0px 2.5px 2.5px var(--dark);
+}
+a:hover {
+  color: var(--theme-hover);
+  text-decoration: underline;
 }
