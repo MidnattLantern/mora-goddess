@@ -5,7 +5,7 @@ import MainView from "./pages/mainView/MainView";
 import { usePayPalContext } from "./contexts/usePayPalContext";
 import Wallpaper from "./components/wallpaper/Wallpaper";
 import PayPalInfo from "./components/payPalInfo/PayPalInfo";
-import { useWindowSize } from "./hooks/UseWindowSize";
+import { useWindowSize } from "./hooks/useWindowSize";
 
 function App() {
   const { displayQRCode } = usePayPalContext();
