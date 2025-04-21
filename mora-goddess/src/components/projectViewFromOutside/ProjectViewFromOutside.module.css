@@ -1,0 +1,123 @@
+.Foundation {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: 600px;
+    border: 1px solid var(--light-transparent);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 10px 5px var(--dark-transparent);
+}
+
+.TitleContainer {
+    position: relative;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 600px;
+    color: var(--light);
+    z-index: 1;
+    background-color: var(--dark);
+}
+    .TitleText {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        width: 600px;
+        text-transform: uppercase;
+        transform: rotate(-90deg);
+        user-select: none;
+    }
+
+.ImageAndNavigationContainer {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+    background-color: var(--dark);
+    backdrop-filter: blur(15px);
+}
+    .ImageContainer {
+        display: flex;
+        margin: 15px;
+    }
+    .ImageSize {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 5px;
+    }
+
+    .NavigationBarContainer {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+        .DownloadButton {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 175px;
+            height: 40px;
+            margin: 15px;
+            background-color: var(--dark);
+            border: 1px solid var(--theme);
+            border-radius: 20px;
+            color: var(--theme);
+            font-size: 15px;
+            transition: all 0.1s ease;
+            text-shadow: none;
+            user-select: none;
+        }
+        .DownloadButton:hover {
+            background-color: var(--theme);
+            color: var(--dark);
+            text-decoration: none;
+        }
+        .DownloadButton:hover .DownloadIcon {
+            fill: var(--dark);
+        }
+        .DownloadButton:active {
+            box-shadow: inset 0px 0px 5px var(--dark);
+        }
+        .LinkToWeblogButton {
+            width: 175px;
+            height: 40px;
+            margin: 15px;
+            background-color: var(--dark);
+            border: 1px solid var(--theme);
+            border-radius: 20px;
+            color: var(--theme);
+            font-size: 15px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            user-select: none;
+        }
+        .LinkToWeblogButton:hover {
+            color: var(--theme-hover);
+            text-decoration: underline;
+        }
+        .DownloadIcon,
+        .TurnPageIcon
+        {
+            fill: var(--theme);
+            width: 20px;
+            height: auto;
+            transition: fill 0.2s ease; /* <- add this */
+        }
