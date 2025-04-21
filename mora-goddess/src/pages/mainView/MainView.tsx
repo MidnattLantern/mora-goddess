@@ -1,29 +1,14 @@
 import Styles from "./MainView.module.css";
-import SmallViewFromInside from "../../assets/downloadable/mora-temple-v1-1mb.jpg"
-import LargeViewFromInside from "../../assets/downloadable/mora-temple-v1-16mb.png";
 import SmallViewFromOutside from "../../assets/downloadable/mora-temple-v2-1mb.jpg"
 import LargeViewFromOutside from "../../assets/downloadable/mora-temple-v2-6mb.png";
-import ProjectView from "../../components/projectView/ProjectView";
-import DownloadIcon from "../../assets/svg/DownloadIcon.svg?react";
+import ProjectViewFromInside from "../../components/projectViewFromInside/ProjectViewFromInside";
 
 const MainView = () => {
 
     return(<>
         <div className={Styles.Foundation}>
 
-          <ProjectView />
-
-        <h1>{"View from inside"}</h1>
-          <img className={Styles.ImageAppearance} src={SmallViewFromInside} alt={"Failed to load image: View from inside"}/>
-
-        <div className={Styles.DownloadButtonsView}>
-            <a className={Styles.DownloadButton} href={SmallViewFromInside} download="Mora Goddess V1">
-            {"Download as jpg 1mb"}
-            </a>
-            <a className={Styles.DownloadButton} href={LargeViewFromInside} download="Mora Goddess V1">
-            {"Download as png 16mb"}
-            </a>
-        </div>
+        <ProjectViewFromInside />
 
         <h1>{"View from outside"}</h1>
           <img className={Styles.ImageAppearance} src={SmallViewFromOutside} alt={"Failed to load image: View from inside"}/>
@@ -36,8 +21,6 @@ const MainView = () => {
             {"Download as png 6mb"}
             </a>
         </div>
-
-        <DownloadIcon />
         
         </div>
     </>)
