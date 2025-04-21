@@ -4,12 +4,17 @@ import Footer from "./pages/footer/Footer";
 import MainView from "./pages/mainView/MainView";
 import { usePayPalContext } from "./contexts/usePayPalContext";
 import Wallpaper from "./components/wallpaper/Wallpaper";
+import PayPalInfo from "./components/payPalInfo/PayPalInfo";
+import { useWindowSize } from "./hooks/UseWindowSize";
 
 function App() {
   const { displayQRCode } = usePayPalContext();
+  const { width } = useWindowSize();
 
   return (<>
     <div className={Styles.Foundation}>
+
+    {width > 768 && <PayPalInfo />}
 
     {displayQRCode ?
       <PayPalQR />
@@ -18,9 +23,13 @@ function App() {
     <div className={Styles.MainView}>
       <MainView />
     </div>
-    <div className={Styles.FooterView}>
-      <Footer />
-    </div>
+
+    {width > 768 &&
+      <div className={Styles.FooterView}>
+        <Footer />
+      </div>
+    }
+
 
     <Wallpaper />
       

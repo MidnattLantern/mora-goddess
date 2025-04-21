@@ -1,36 +1,44 @@
 .Foundation {
+    /* width as variable from .tsx */
+    height: 100px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    border-radius: 50px;
+    border: 0.5px solid var(--light-transparent);
+    box-shadow: 0px 5px 5px var(--dark-transparent);
+    backdrop-filter: blur(50px);
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: baseline;
+    transition: all 0.5s ease;
+}
+.LogoCollapse {
+    background-color: rgba(0,0,0,0);
+    min-width: 100px;
+    min-height: 100px;
+    border: none;
+}
+.LogoSize {
+    width: 50px;
+    height: auto;
 }
 .PayPalInfoView {
     display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    justify-content: center;
-    backdrop-filter: blur(50px);
-    width: 750px;
-    height: 100px;
-    border-radius: 15px;
-    border: 0.5px solid var(--light-transparent);
-    box-shadow: 0px 5px 5px var(--dark-transparent);
-}
-.PayPalHeader {
-    padding-left: 50px;
-}
-.PayPalInfoTags {
-    display: flex;
-    width: 100%;
-    justify-content:space-around;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 .InfoTagItem {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 200px;
+    min-width: 200px;
     height: 25px;
+    margin: 15px;
 }
 .ShowQRCodeButton {
     width: 100%;

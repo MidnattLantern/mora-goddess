@@ -1,31 +1,19 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import Styles from "./PayPalInfo.module.css";
 import { usePayPalContext } from "../../contexts/usePayPalContext";
+import { useState } from "react";
+import PayPalLogo from "../../assets/paypal/PayPal-logo.png";
 
 const PayPalInfo = () => {
-      const { displayQRCode, setDisplayQRCode } = usePayPalContext();
+    const { displayQRCode, setDisplayQRCode } = usePayPalContext();
+    const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
+    const [foundationWidth, setFoundationWidth] = useState<number>(100);
 
-    const PayPalInfoView = ({ children }: { children: ReactNode }) => {
+    // components
+    const PayPalInfoView = () => {
         return(
-            <p className={Styles.PayPalInfoView}>
-                {children}
-            </p>
-        )
-    };
+            <div className={Styles.PayPalInfoView}>
 
-    const InfoTagItem = ({ children }: { children: ReactNode }) => {
-        return(
-            <div className={Styles.InfoTagItem}>
-                {children}
-            </div>
-        )
-    };  
-
-    return (
-        <div className={Styles.Foundation}>
-            <PayPalInfoView>
-                <h1 className={Styles.PayPalHeader}>{"PayPal:"}</h1>
-                <div className={Styles.PayPalInfoTags}>
                 <InfoTagItem>
                     {"isakvent@outlook.com"}
                 </InfoTagItem>
@@ -39,8 +27,42 @@ const PayPalInfo = () => {
                         "Show QR code" }
                     </button>
                 </InfoTagItem>
-                </div>
-            </PayPalInfoView>
+
+            </div>
+        )
+    };
+    const InfoTagItem = ({ children }: { children: ReactNode }) => {
+        return(
+            <p className={Styles.InfoTagItem}>
+                {children}
+            </p>
+        )
+    };  
+
+    // effects
+    useEffect(() => {
+        if (isCollapsed) {
+            setFoundationWidth(850);
+        } else {
+            setFoundationWidth(100);
+        }
+    }, [isCollapsed]);
+
+    // render
+    return (
+            <div
+            onMouseEnter={() => {setIsCollapsed(true)}} // for mouse devices
+            onMouseLeave={() => {setIsCollapsed(false)}} // for mouse devices
+            className={Styles.Foundation} style={{ width: `${foundationWidth}px` }}>
+
+            <button className={Styles.LogoCollapse}
+            onTouchStart={() => {setIsCollapsed(!isCollapsed)}} // for touch devices
+            >
+                <img src={PayPalLogo} alt="PayPal Logo" className={Styles.LogoSize}/>
+            </button>
+
+            <PayPalInfoView />
+
         </div>
     )
 };
