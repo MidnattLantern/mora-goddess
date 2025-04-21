@@ -31,7 +31,7 @@
   --light-transparent: rgb(225, 220, 215, 0.25);
 }
 
-p, h1 {
+p, h1, li {
   padding: 0px;
   margin: 0px;
   color: var(--light);
@@ -46,6 +46,6 @@ a:hover {
   color: var(--theme-hover);
   text-decoration: underline;
 }
-br {
-  margin: 15px;
+ul {
+  margin-left: 15px;
 }
