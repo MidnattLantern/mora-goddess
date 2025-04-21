@@ -45,9 +45,27 @@
         width: 200px;
         height: 200px;
         border-radius: 5px;
+        object-fit: cover;
     }
     .FinalModelImageSize {
         width: 600px;
         height: auto;
         border-radius: 5px;
+        object-fit: cover;
+    }
+    .CodeBlock {
+        background-color: #1e1e1e;
+        color: #d4d4d4;
+        padding: 16px;
+        border-radius: 8px;
+        font-family: 'Courier New', monospace;
+        overflow-x: auto;
+        white-space: pre-wrap;
+    }
+    .POVScreenshotImageSize {
+        margin: 15px;
+        width: 400px;
+        height: 250px;
+        border-radius: 5px;
+        object-fit: cover;
     }
