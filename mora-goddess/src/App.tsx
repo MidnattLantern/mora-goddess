@@ -6,6 +6,8 @@ import { usePayPalContext } from "./contexts/usePayPalContext";
 import Wallpaper from "./components/wallpaper/Wallpaper";
 import PayPalInfo from "./components/payPalInfo/PayPalInfo";
 import { useWindowSize } from "./hooks/useWindowSize";
+import { Routes, Route } from "react-router-dom";
+import WeblogViewFromInside from "./pages/weblog/viewFromInside/ViewFromInside";
 
 function App() {
   const { displayQRCode } = usePayPalContext();
@@ -20,18 +22,35 @@ function App() {
       <PayPalQR />
     : null}
 
-    <div className={Styles.MainView}>
-      <MainView />
-    </div>
+      <Routes>
+
+        <Route path="mora-goddess" element={<>
+          <div className={Styles.MainView}>
+            <MainView />
+            <div className={Styles.BottomMargin}/>
+          </div>
+          <Wallpaper />
+        </>}/>
+
+        <Route path="mora-goddess/weblog/view-from-inside" element={<>
+          <WeblogViewFromInside />
+        </>}/>
+
+        <Route path="mora-goddess/weblog/view-from-outside" element={<>
+          <h1>View from outside weblog</h1>
+        </>}/>
+
+        <Route path="*" element={<>
+          <h1>404 Not found</h1>
+        </>}/>
+
+      </Routes>
 
     {width > 768 &&
       <div className={Styles.FooterView}>
         <Footer />
       </div>
     }
-
-
-    <Wallpaper />
       
     </div>
   </>)

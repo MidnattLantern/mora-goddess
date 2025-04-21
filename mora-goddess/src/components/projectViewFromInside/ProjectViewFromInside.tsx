@@ -3,6 +3,7 @@ import SmallViewFromInside from "../../assets/downloadable/mora-temple-v1-1mb.jp
 import LargeViewFromInside from "../../assets/downloadable/mora-temple-v1-16mb.png";
 import DownloadIcon from "../../assets/svg/DownloadIcon.svg?react";
 import TurnPageIcon from "../../assets/svg/TurnPageIcon.svg?react";
+import { Link } from "react-router-dom";
 
 const ProjectViewFromInside = () => {
     return (
@@ -25,10 +26,10 @@ const ProjectViewFromInside = () => {
                             <DownloadIcon className={Styles.DownloadIcon}/>
                             {"As png 16mb"}
                         </a>
-                        <a className={Styles.LinkToWeblogButton} href={"./view-from-inside"}>
+                        <Link className={Styles.LinkToWeblogButton} to={"./weblog/view-from-inside"}>
                             {"Read the Weblog"}
                             <TurnPageIcon className={Styles.TurnPageIcon}/>
-                        </a>
+                        </Link>
                     </div>
                 </div>
 

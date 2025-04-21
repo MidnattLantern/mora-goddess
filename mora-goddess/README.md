@@ -3,14 +3,16 @@ This repository is dedicated to the Mora Goddess project, commissioned by Yviira
 
 This site is built on the Vite React framwork and published to GitHub pages.
 
-Font: Faculty Glyphic from Google Fonts
+Theme Font: 
 ```css
 .Font {
-  font-family: "Faculty Glyphic", sans-serif;
+
 }
 ```
 
+
 Setting up Vite React:
+===
 ``` zsh
 npm create vite@latest
 ```
@@ -46,8 +48,9 @@ export default defineConfig({
 npm run deploy
 ```
 
+
 SVG support
----
+===
 1. paste in the terminal:
 ```svg
 npm install vite-plugin-svgr --save-dev
@@ -71,5 +74,53 @@ export default defineConfig({
 /// <reference types="vite/client" />
 /// <reference types="vite-plugin-svgr/client" />
 ```
+
+
+Routing
+===
+Routing allow the app to display different components depending on the routing (or link).
+
+1. Install Routing:
+```zsh
+npm install react-router-dom
+```
+
+2. Inside `main.tsx`, disable:
+```TypeScript
+import { createRoot } from 'react-dom/client'
+```
+
+3. Inside `main.tsx`, import
+```TypeScript
+import { BrowserRouter } from 'react-router-dom';
+import { PayPalContextProvider } from './contexts/PayPalContext.tsx';
+```
+
+4. Inside `main.tsx`, wrap the app with
+``TypeScript
+<BrowserRouter>
+  <App />
+</BrowserRouter>
+```
+
+5. Routes can be used with the Routes element:
+```TypeScript
+<Routes>
+  <Route path="/destination" element={
+    <Element />
+  }/>
+</Routes>
+```
+
+Unless <a> is used for downloading files, use <Link> tag instead for better and flexible routing:
+```TypeScript
+import { Link } from "react-router-dom";
+```
+```TypeScript
+<Link to={"./destination"}>
+    {"content"}
+</Link>
+```
+
 
 Live link: `https://midnattlantern.github.io/mora-goddess/`

@@ -6,12 +6,18 @@
 }
 
 .MainView {
-  height: calc(100vh - 75px); /* 75vh - FooterView height */
+  height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
   width: 100%;
 }
+.BottomMargin {
+  height: 75px;
+}
 
 .FooterView {
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
   height: 75px;
 }

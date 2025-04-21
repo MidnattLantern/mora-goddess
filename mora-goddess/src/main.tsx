@@ -1,13 +1,17 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+//import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
-import { PayPalContextProvider } from './contexts/PayPalContext.tsx'
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import { PayPalContextProvider } from './contexts/PayPalContext.tsx';
 
-createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <PayPalContextProvider>
-      <App />
-    </PayPalContextProvider>
+    <BrowserRouter>
+      <PayPalContextProvider>
+        <App />
+      </PayPalContextProvider>
+    </BrowserRouter>
   </StrictMode>,
 )
