@@ -4,6 +4,7 @@ import LargeViewFromInside from "../../assets/downloadable/mora-temple-v1-16mb.p
 import SmallViewFromOutside from "../../assets/downloadable/mora-temple-v2-1mb.jpg"
 import LargeViewFromOutside from "../../assets/downloadable/mora-temple-v2-6mb.png";
 import ProjectView from "../../components/projectView/ProjectView";
+import DownloadIcon from "../../assets/svg/DownloadIcon.svg?react";
 
 const MainView = () => {
 
@@ -35,6 +36,8 @@ const MainView = () => {
             {"Download as png 6mb"}
             </a>
         </div>
+
+        <DownloadIcon />
         
         </div>
     </>)

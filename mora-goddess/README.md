@@ -46,4 +46,30 @@ export default defineConfig({
 npm run deploy
 ```
 
+SVG support
+---
+1. paste in the terminal:
+```svg
+npm install vite-plugin-svgr --save-dev
+```
+
+2. update the file `vite.config.ts`:
+```TypeScript
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import svgr from "vite-plugin-svgr";
+
+// https://vite.dev/config/
+export default defineConfig({
+  base: '/mora-goddess/',
+  plugins: [react(), svgr()],
+})
+```
+
+3. update the file `vite-env.d-ts`:
+```TypeScript
+/// <reference types="vite/client" />
+/// <reference types="vite-plugin-svgr/client" />
+```
+
 Live link: `https://midnattlantern.github.io/mora-goddess/`

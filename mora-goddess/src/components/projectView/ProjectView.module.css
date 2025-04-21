@@ -10,7 +10,6 @@
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0px 10px 5px var(--dark-transparent);
-    background-color: var(--dark);
 }
 
 .TitleContainer {
@@ -23,6 +22,7 @@
     height: 600px;
     color: var(--light);
     z-index: 1;
+    background-color: var(--dark);
 }
     .TitleText {
         position: absolute;
@@ -43,10 +43,12 @@
     flex-direction: column;
     justify-content: baseline;
     align-items: center;
+    background-color: var(--dark);
+    backdrop-filter: blur(15px);
 }
     .ImageContainer {
         display: flex;
-        margin: 10px;
+        margin: 15px;
     }
         .ImageSize {
             max-width: 100%;
