@@ -3,11 +3,14 @@ import SmallViewFromInside from "../../assets/downloadable/mora-temple-v1-1mb.jp
 import LargeViewFromInside from "../../assets/downloadable/mora-temple-v1-16mb.png";
 import SmallViewFromOutside from "../../assets/downloadable/mora-temple-v2-1mb.jpg"
 import LargeViewFromOutside from "../../assets/downloadable/mora-temple-v2-6mb.png";
+import ProjectView from "../../components/projectView/ProjectView";
 
 const MainView = () => {
 
     return(<>
         <div className={Styles.Foundation}>
+
+          <ProjectView />
 
         <h1>{"View from inside"}</h1>
           <img className={Styles.ImageAppearance} src={SmallViewFromInside} alt={"Failed to load image: View from inside"}/>

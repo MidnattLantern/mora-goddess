@@ -3,6 +3,13 @@ This repository is dedicated to the Mora Goddess project, commissioned by Yviira
 
 This site is built on the Vite React framwork and published to GitHub pages.
 
+Font: Faculty Glyphic from Google Fonts
+```css
+.Font {
+  font-family: "Faculty Glyphic", sans-serif;
+}
+```
+
 Setting up Vite React:
 ``` zsh
 npm create vite@latest

@@ -21,13 +21,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --theme-font: "Smythe", serif;
   --theme: rgb(150, 150, 200);
   --theme-hover: rgb(200, 200, 250);
-  --dark: rgb(20, 20, 20);
-  --dark-transparent: rgba(20, 20, 20, 0.5);
+  --dark: rgb(15, 20, 25);
+  --dark-transparent: rgba(15, 20, 25, 0.5);
   --dark-background: #242424;
-  --light: rgb(200, 200, 200);
-  --light-transparent: rgb(200, 200, 200, 0.5);
+  --light: rgb(225, 220, 215);
+  --light-transparent: rgb(225, 220, 215, 0.25);
 }
 
 p, h1 {
