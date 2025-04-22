@@ -78,6 +78,7 @@ export default defineConfig({
 
 Routing
 ===
+This feature has been scrapped as GitHub pages does not support Routing.
 Routing allow the app to display different components depending on the routing (or link).
 
 1. Install Routing:
@@ -121,6 +122,8 @@ import { Link } from "react-router-dom";
     {"content"}
 </Link>
 ```
+
+Routing has been replaced with a custom RenderPage context, as Routing isn't supported for static Github Pages applications.
 
 
 Live link: `https://midnattlantern.github.io/mora-goddess/`

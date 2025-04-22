@@ -3,9 +3,11 @@ import SmallViewFromInside from "../../assets/downloadable/mora-temple-v1-1mb.jp
 import LargeViewFromInside from "../../assets/downloadable/mora-temple-v1-16mb.png";
 import DownloadIcon from "../../assets/svg/DownloadIcon.svg?react";
 import TurnPageIcon from "../../assets/svg/TurnPageIcon.svg?react";
-import { Link } from "react-router-dom";
+import { useRenderPageContext } from "../../contexts/useRenderPageContext";
 
 const ProjectViewFromInside = () => {
+    const { setPageName } = useRenderPageContext();
+
     return (
         <>
             <div className={Styles.Foundation}>
@@ -26,10 +28,10 @@ const ProjectViewFromInside = () => {
                             <DownloadIcon className={Styles.DownloadIcon}/>
                             {"As png 16mb"}
                         </a>
-                        <Link className={Styles.LinkToWeblogButton} to={"./weblog/view-from-inside"}>
+                        <button className={Styles.LinkToWeblogButton} onClick={() => {setPageName("weblog-view-from-inside")}}>
                             {"Read the Weblog"}
                             <TurnPageIcon className={Styles.TurnPageIcon}/>
-                        </Link>
+                        </button>
                     </div>
                 </div>
 

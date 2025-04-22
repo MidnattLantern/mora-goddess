@@ -12,7 +12,7 @@ interface PayPalContextProps {
 };
 
 const PayPalContextProvider: React.FC<PayPalContextProps> = ({children}) => {
-    const [displayQRCode, setDisplayQRCode] = useState(false);
+    const [displayQRCode, setDisplayQRCode] = useState<boolean>(false);
 
     return (
         <PayPalContext.Provider value={{

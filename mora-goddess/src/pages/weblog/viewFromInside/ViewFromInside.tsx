@@ -10,9 +10,10 @@ import EstablishLayers from "../../../assets/weblog/view-from-inside/establish-l
 import LightValues from "../../../assets/weblog/view-from-inside/light-values.png";
 import FinalResult from "../../../assets/downloadable/mora-temple-v1-1mb.jpg";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useRenderPageContext } from "../../../contexts/useRenderPageContext";
 
 const ViewFromInside = () => {
+    const { setPageName } = useRenderPageContext();
     const [showFreeCamScript, setShowFreeCamScript] = useState<boolean>(false);
 
     const ChapterDiv = ({children} : { children: React.ReactNode}) => {
@@ -151,9 +152,9 @@ const ViewFromInside = () => {
         <div className={Styles.Foundation}>
 
             <div className={Styles.NavigationBarContainer}>
-                <Link className={Styles.NavigationBar} to="/mora-goddess">
-                    <ReturnIcon className={Styles.ReturnIcon}/>
-                </Link>
+                <div className={Styles.NavigationBar}>
+                    <ReturnIcon className={Styles.ReturnIcon} onClick={() => {setPageName("main")}}/>
+                </div>
             </div>
 
             <WeblogContent />

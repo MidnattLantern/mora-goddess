@@ -3,9 +3,11 @@ import SmallViewFromOutside from "../../assets/downloadable/mora-temple-v2-1mb.j
 import LargeViewFromOutside from "../../assets/downloadable/mora-temple-v2-6mb.png";
 import DownloadIcon from "../../assets/svg/DownloadIcon.svg?react";
 import TurnPageIcon from "../../assets/svg/TurnPageIcon.svg?react";
-import { Link } from "react-router-dom";
+import { useRenderPageContext } from "../../contexts/useRenderPageContext";
 
 const ProjectViewFromOutside = () => {
+    const { setPageName } = useRenderPageContext();
+
     return (
         <>
             <div className={Styles.Foundation}>
@@ -26,10 +28,10 @@ const ProjectViewFromOutside = () => {
                             <DownloadIcon className={Styles.DownloadIcon}/>
                             {"As png 6mb"}
                         </a>
-                        <Link className={Styles.LinkToWeblogButton} to={"./weblog/view-from-outside"}>
+                        <button className={Styles.LinkToWeblogButton} onClick={() => {setPageName("weblog-view-from-outside")}}>
                             {"Read the Weblog"}
                             <TurnPageIcon className={Styles.TurnPageIcon}/>
-                        </Link>
+                        </button>
                     </div>
                 </div>
 
