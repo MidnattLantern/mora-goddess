@@ -59,6 +59,23 @@
         border-radius: 5px;
         object-fit: cover;
     }
+    .ToggleShowScriptButton {
+        margin: 10px;
+        border: 1px solid var(--theme);
+        color: var(--theme);
+        background-color: var(--dark);
+        width: 170px;
+        height: 40px;
+        border-radius: 20px;
+        transition: all 0.1s ease;
+    }
+    .ToggleShowScriptButton:hover {
+        background-color: var(--theme);
+        color: var(--dark);
+    }
+    .ToggleShowScriptButton:active {
+        box-shadow: inset 0px 0px 5px var(--dark);
+    }
     .CodeBlock {
         background-color: #1e1e1e;
         color: #d4d4d4;

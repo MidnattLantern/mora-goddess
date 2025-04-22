@@ -22,8 +22,8 @@
   -moz-osx-font-smoothing: grayscale;
 
   --theme-font: "Smythe", serif;
-  --theme: rgb(150, 150, 200);
-  --theme-hover: rgb(200, 200, 250);
+  --theme: rgb(200, 120, 130);
+  --theme-hover: rgb(250, 170, 180);
   --dark: rgb(18, 20, 22);
   --dark-transparent: rgba(18, 20, 22, 0.5);
   --dark-background: #242424;

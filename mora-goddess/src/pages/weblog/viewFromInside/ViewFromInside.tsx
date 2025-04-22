@@ -85,36 +85,29 @@ const ViewFromInside = () => {
             <div className={Styles.WeblogContainer}>
                 <ChapterDiv>
                     <h1>The Making of Inside View</h1>
-                    <p>By commission from Yviira, I was asked to paint a couple point of views (POVs) for Mora's temple. With the descriptions:</p>
-                    <br/>
-                    <ul>
-                        <li>Lots of plants</li>
-                        <li>Orchards of fruits</li>
-                        <li>Trees and gardens outside</li>
-                        <li>Lots of sunlight</li>
-                        <li>Well-kept greenery</li>
-                        <li>The size equivalent of a sunday mass</li>
-                    </ul>
+                    <p>When Yviira asked me to design and paint a temple for her character Mora, I was excited with the descriptions: A lush but well kept sanctuary and an orchard with lots of greenery, and big window frames to let in the light and atmosphere. Painting lush landscapes and architectural paintings is my favorite theme to paint, this was my element.</p>
                 </ChapterDiv>
                 <ChapterDiv>
                     <h1>3D Modeling</h1>
-                    <p>I've never worked with complicated architecture besides basic manual perspective grid using a ruler and Clip Studio Paint's built-in perspective ruler, but this time I wanted to use Blender.</p>
+                    <p>Up to this point, my experience with architecture was basic. I've mostly drawn manual perspective grids with a ruler or using Clip Studio Paint's perspective tool. But for this project, I wanted to take it a step further. I've been wanting to learn Blender to paint more complex architecture and general composition, so this was my perfect excuse.</p>
                     <br/>
-                    <p>I started with planning what bird's eye layout view I should use. I suggested two layouts:</p>
+                    <p>I started with planning what bird's eye layout view I should use. I proposed two layouts:</p>
                     <img className={Styles.BirdViewImageSize} src={BirdseyeView1} alt={"couldn't load image"}/>
                     <img className={Styles.BirdViewImageSize} src={BirdseyeView2} alt={"couldn't load image"}/>
-                    <p>We went for the left one.</p>
+                    <p>We went for the left one, as it resembled the description of Mora's star-like logo/ icon.</p>
                     <br/>
-                    <p>Having studied graphic design during year 10 - 13, I had prior knowledge with Adobe Illustrator and Affinity Designer. I had some basic understanding on Blender, it's like a 3D Illustrator/Designer, so most technical things weren't too hard to figure out with intuition and help of the internet and ChatGPT. This was the project that pushed me to learn Blender in more depth; using modifiers such as Boolean, Mirror, Array and Panel making square faces into window planes. I learned how to join vertices and faces and finally applying modifiers to a single less heavy object.</p>
+                    <p>Having studied graphic design during year 10 - 13, it gave me a decent head-start into Blender. It's a bit like a 3D version of the tools I already knew, Adobe Illustrator and Affinity Designer. Most of the technical hurdles weren't too hard to figure out, thanks to intuition and some help from internet tutorials and ChatGPT.</p>
                     <br/>
-                    <p>I eventually ended up with this design:</p>
+                    <p>This project pushed me to really dig into Blender's features; using modifiers like Boolean, Mirror, and Array, and turning simple faces into detailed window panels. I learned how to properly join vertices, edges and faces, and finally how to apply modifiers cleanly to keep the object lightweight.</p>
+                    <br/>
+                    <p>Eventually I ended up with this design:</p>
                     <img className={Styles.FinalModelImageSize} src={FinalModel} alt={"couldn't load image"}/>
                     <p>After getting the design approved, it was time to think of good POVs. I could go the traditional route by placing the camera in different angles, render and suggesting them to my client, but I had a better idea...</p>
                 </ChapterDiv>
                 <ChapterDiv>
                     <h1>POV using Unity</h1>
-                    <p>...I've been wanting to learn about Unity and C#. Why not build a 3D web-game in Unity and let my client move around and pick POVs herself? I exported the model as an .fbx file, a 3d model file format Blender can read. Then I imported the .fbx file, wrote a C# script to allow the player to navigate with WASD, Shift, Space and the mouse and assigned the script to the camera. Then I built the game as a web app, published the build to GitHub and sent her the link. My client would move the camera and take screenshots of POVs she liked.</p>
-                    <button onClick={() => {setShowFreeCamScript(!showFreeCamScript)}}>
+                    <p>...I've been wanting to learn about Unity and C#, so this was my perfect excuse. Let's make it interactive and let my client move around and pick POVs herself! I exported the Blender model as an .fbx file, imported it into Unity, and wrote a basic script that let players move freely with WASD keys, mouse look, Shift, and Space. Then I built the game as a web app, published the app to GitHub Pages and sent Yviira the link. She was able to move explore and screenshot POVs she liked.</p>
+                    <button className={Styles.ToggleShowScriptButton} onClick={() => {setShowFreeCamScript(!showFreeCamScript)}}>
                         {showFreeCamScript ? (
                             <>Hide FreeCam script</>
                         ) : (
@@ -122,7 +115,7 @@ const ViewFromInside = () => {
                         )}
                     </button>
                     <FreeCamScript />
-                    <p>The web game can be accessed through this link: <a href="https://midnattlantern.github.io/display-mora-temple/" target="_blank">midnattlantern.github.io/display-mora-temple</a></p>
+                    <p>If you're curious, you can check it out yourself with this link: <a href="https://midnattlantern.github.io/display-mora-temple/" target="_blank">midnattlantern.github.io/display-mora-temple</a></p>
                     <br/>
                     <p>Yviira sent me these screenshots:</p>
                     <img className={Styles.POVScreenshotImageSize} src={POVScreenshotInside} alt="couldn't load image"/>
@@ -131,11 +124,11 @@ const ViewFromInside = () => {
                 </ChapterDiv>
                 <ChapterDiv>
                     <h1>Establishing the light values</h1>
-                    <p>By using the screenshot as a background layer, I was able to trace over the shapes of the structure. I made multiple layers ranging from closest to farthest away. For this weblog, the farthest layers have been reduced in opacity. Then I added a clipping layer to each to establish highlighting and shading. Every layer has its pixels locked for fast and easy shading.</p>
+                    <p>By using the screenshot as a background layer, I was able to trace over the shapes of the structure. I made multiple layers ranging from closest to farthest away. I started by tracing over the basic structure using layers from the closest elements to the farthest. For this weblog, I dimmed the background layers to show how depth was built up step-by-step.</p>
                     <img className={Styles.EstablishLayersImageSize} src={EstablishLayers} alt="couldn't load image"/>
                     <br/>
                     <br/>
-                    <p>Before applying colors, I was playing around experimenting with values to achieve harmony, using light to separate foreground from background, making each section of the structure distinct and providing atmosphere. </p>
+                    <p>Next, I focused on the lighting. Before adding color, I spent time experimenting purely with values — making sure the light separated the different sections of the temple and kept the whole scene balanced and atmospheric. </p>
                     <img className={Styles.LightValuesImageSize} src={LightValues} alt="couldn't load image"/>
                     <br/>
                     <br/>
@@ -143,7 +136,7 @@ const ViewFromInside = () => {
                 </ChapterDiv>
                 <ChapterDiv>
                     <h1>Final touches</h1>
-                    <p>I added some vines and bushes, and amplified the lighting with Clip Studio Paint's Add Glow blend option. Most softwares have their equivalent to CSP's Add Glow. CSP being a software targeted towards digital painting, it lacks some editing features you'd find in a photography targeted software. So I exported the image as a .png and opened it with Affinity Photo, a competitor to Adobe's Photoshop, to add light chromatic aberration, barely noticeable Gaussian blur, and finally light noise. This effect gives the image a more authentic feel, as it dissolves elements from digital artworks that can make it feel artificial.</p>
+                    <p>I added vines and bushes, and amplified the lighting with Clip Studio Paint's Add Glow blend option. Most software have their equivalent to CSP's Add Glow. CSP being a software targeted towards digital painting, it lacks some editing features you'd find in a photography targeted software. So I exported the image as a .png and opened it with Affinity Photo, adding a tiny bit of chromatic aberration, soft Gaussian blur, and subtle noise. These small tweaks helped dissolve that overly crisp digital feeling and gave the artwork a more authentic atmosphere.</p>
                     <br/>
                     <p>Yviira wanted the temple to look maintained. I think I nailed a good balance between maintained and natural, she was satisfied with the final result:</p>
                     <img className={Styles.FinalResultImageSize} src={FinalResult} alt="couldn't load image"/>
