@@ -16,9 +16,9 @@ const ViewFromInside = () => {
     const { setPageName } = useRenderPageContext();
     const [showFreeCamScript, setShowFreeCamScript] = useState<boolean>(false);
 
-    const ChapterDiv = ({children} : { children: React.ReactNode}) => {
+    const ChapterDiv = ({children, id} : { children: React.ReactNode; id?: string}) => {
         return(
-            <div className={Styles.ChapterDiv}>
+            <div className={Styles.ChapterDiv} id={id}>
                 {children}
             </div>
         )
@@ -84,11 +84,11 @@ const ViewFromInside = () => {
     const WeblogContent = () => {
         return(
             <div className={Styles.WeblogContainer}>
-                <ChapterDiv>
+                <ChapterDiv id="intro">
                     <h1>The Making of Inside View</h1>
                     <p>When Yviira asked me to design and paint a temple for her character Mora, I was excited with the descriptions: A lush but well kept sanctuary and an orchard with lots of greenery, and big window frames to let in the light and atmosphere. Painting lush landscapes and architectural paintings is my favorite theme to paint, this was my element.</p>
                 </ChapterDiv>
-                <ChapterDiv>
+                <ChapterDiv id="3d-model">
                     <h1>3D Modeling</h1>
                     <p>Up to this point, my experience with architecture was basic. I've mostly drawn manual perspective grids with a ruler or using Clip Studio Paint's perspective tool. But for this project, I wanted to take it a step further. I've been wanting to learn Blender to paint more complex architecture and general composition, so this was my perfect excuse.</p>
                     <br/>
@@ -105,7 +105,7 @@ const ViewFromInside = () => {
                     <img className={Styles.FinalModelImageSize} src={FinalModel} alt={"couldn't load image"}/>
                     <p>After getting the design approved, it was time to think of good POVs. I could go the traditional route by placing the camera in different angles, render and suggesting them to my client, but I had a better idea...</p>
                 </ChapterDiv>
-                <ChapterDiv>
+                <ChapterDiv id="unity">
                     <h1>POV using Unity</h1>
                     <p>...I've been wanting to learn about Unity and C#, so this was my perfect excuse. Let's make it interactive and let my client move around and pick POVs herself! I exported the Blender model as an .fbx file, imported it into Unity, and wrote a basic script that let players move freely with WASD keys, mouse look, Shift, and Space. Then I built the game as a web app, published the app to GitHub Pages and sent Yviira the link. She was able to move explore and screenshot POVs she liked.</p>
                     <button className={Styles.ToggleShowScriptButton} onClick={() => {setShowFreeCamScript(!showFreeCamScript)}}>
@@ -123,7 +123,7 @@ const ViewFromInside = () => {
                     <img className={Styles.POVScreenshotImageSize} src={POVScreenshotOutside} alt="couldn't load image"/>
                     <p>This weblog is regarding the left image. For the right image, check the weblog regarding View From Outside.</p>
                 </ChapterDiv>
-                <ChapterDiv>
+                <ChapterDiv id="values">
                     <h1>Establishing the light values</h1>
                     <p>By using the screenshot as a background layer, I was able to trace over the shapes of the structure. I made multiple layers ranging from closest to farthest away. I started by tracing over the basic structure using layers from the closest elements to the farthest. For this weblog, I dimmed the background layers to show how depth was built up step-by-step.</p>
                     <img className={Styles.EstablishLayersImageSize} src={EstablishLayers} alt="couldn't load image"/>
@@ -135,7 +135,7 @@ const ViewFromInside = () => {
                     <br/>
                     <p>All art/ photography applications have a level correction feature, this can be a great way to begin applying colors to a greyscale image, though it can be tedious to apply a level correction to each and every layer. Though, at this stage, you usually don't have that many layers. Of course you want to use actual colors to shift away from greyscale. If you're worried that radical shifting will break the atmosphere and light values, you can use soft brushes or blending brushes, as well as adding a saturation correction layer at the top to check how the brightness values change along with the color.</p>
                 </ChapterDiv>
-                <ChapterDiv>
+                <ChapterDiv id="final">
                     <h1>Final touches</h1>
                     <p>I added vines and bushes, and amplified the lighting with Clip Studio Paint's Add Glow blend option. Most software have their equivalent to CSP's Add Glow. CSP being a software targeted towards digital painting, it lacks some editing features you'd find in a photography targeted software. So I exported the image as a .png and opened it with Affinity Photo, adding a tiny bit of chromatic aberration, soft Gaussian blur, and subtle noise. These small tweaks helped dissolve that overly crisp digital feeling and gave the artwork a more authentic atmosphere.</p>
                     <br/>
@@ -154,6 +154,11 @@ const ViewFromInside = () => {
             <div className={Styles.NavigationBarContainer}>
                 <div className={Styles.NavigationBar}>
                     <ReturnIcon className={Styles.ReturnIcon} onClick={() => {setPageName("main")}}/>
+                    <a href="#intro">Into</a>
+                    <a href="#3d-model">3D Model</a>
+                    <a href="#unity">Unity</a>
+                    <a href="#values">Values</a>
+                    <a href="#final">Final</a>
                 </div>
             </div>
 

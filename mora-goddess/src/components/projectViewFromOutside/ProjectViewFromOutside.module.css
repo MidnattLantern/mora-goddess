@@ -113,6 +113,7 @@
         .LinkToWeblogButton:hover {
             color: var(--theme-hover);
             text-decoration: underline;
+            cursor: pointer;
         }
         .DownloadIcon,
         .TurnPageIcon
