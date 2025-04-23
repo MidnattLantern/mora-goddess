@@ -31,7 +31,7 @@ const PayPalInfo = () => {
             </div>
         )
     };
-    const InfoTagItem = ({ children }: { children: ReactNode }) => {
+    const InfoTagItem = ({children} : { children: ReactNode }) => {
         return(
             <p className={Styles.InfoTagItem}>
                 {children}

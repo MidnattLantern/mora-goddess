@@ -12,6 +12,11 @@
     box-shadow: 0px 10px 5px var(--dark-transparent);
     margin: 15px;
 }
+@media (max-width: 1024px) {
+.Foundation {
+    width: 95vw;
+    height: 55vw;
+}}
 
 .TitleContainer {
     position: relative;
@@ -20,11 +25,15 @@
     justify-content: center;
     align-items: center;
     width: 100px;
-    height: 600px;
+    height: 100%;
     color: var(--light);
     z-index: 1;
     background-color: var(--dark);
 }
+@media (max-width: 1024px) {
+.TitleContainer {
+    width: 10vw;
+}}
     .TitleText {
         position: absolute;
         display: flex;
@@ -36,6 +45,11 @@
         transform: rotate(-90deg);
         user-select: none;
     }
+    @media (max-width: 1024px) {
+    .TitleText {
+        width: 60vw;
+        font-size: 4vw;
+    }}
 
 .ImageAndNavigationContainer {
     width: 100%;
@@ -43,7 +57,6 @@
     object-fit: cover;
     display: flex;
     flex-direction: column;
-    justify-content: baseline;
     align-items: center;
     background-color: var(--dark);
     backdrop-filter: blur(15px);
@@ -52,6 +65,10 @@
         display: flex;
         margin: 15px;
     }
+    @media (max-width: 1024px) {
+    .ImageContainer {
+        margin: 1.5vw;
+    }}
     .ImageSize {
         max-width: 100%;
         max-height: 100%;
@@ -60,15 +77,22 @@
         object-fit: contain;
         border-radius: 5px;
     }
+    @media (max-width: 1024px) {
+    .ImageSize {
+        border-radius: 0.5vw;
 
+    }}
     .NavigationBarContainer {
         width: 100%;
-        height: 100px;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
     }
+    @media (max-width: 1024px) {
+    .NavigationBarContainer {
+        height: auto;
+    }}
         .DownloadButton {
             display: flex;
             justify-content: space-evenly;
@@ -84,6 +108,17 @@
             transition: all 0.1s ease;
             text-shadow: none;
             user-select: none;
+        }
+        @media (max-width: 1024px) {
+        .DownloadButton {
+            width: 17.5vw;
+            height: 4vw;
+            margin: 1.5vw;
+            margin-top: 0;
+            border-width: 0.1vw;
+            border-radius: 2vw;
+            font-size: 1.5vw;
+        }
         }
         .DownloadButton:hover {
             background-color: var(--theme);
@@ -110,6 +145,16 @@
             align-items: center;
             user-select: none;
         }
+        @media (max-width: 1024px) {
+        .LinkToWeblogButton {
+            width: 17.5vw;
+            height: 4vw;
+            margin: 1.5vw;
+            margin-top: 0;
+            border-width: 0.1vw;
+            border-radius: 2vw;
+            font-size: 1.5vw;
+        }}
         .LinkToWeblogButton:hover {
             color: var(--theme-hover);
             text-decoration: underline;
@@ -123,3 +168,10 @@
             height: auto;
             transition: fill 0.2s ease; /* <- add this */
         }
+        @media (max-width: 1024px) {
+        .DownloadIcon,
+        .TurnPageIcon
+        {
+            width: 2vw;
+        }}
+

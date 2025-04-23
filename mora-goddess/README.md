@@ -125,5 +125,11 @@ import { Link } from "react-router-dom";
 
 Routing has been replaced with a custom RenderPage context, as Routing isn't supported for static Github Pages applications.
 
+Responsive guidelines
+===
+desktop: more than 1024
+tablet: 1024 or less
+phone: 440 or less
+
 
 Live link: `https://midnattlantern.github.io/mora-goddess/`

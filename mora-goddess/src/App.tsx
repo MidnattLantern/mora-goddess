@@ -16,7 +16,7 @@ function App() {
 
   const MainPageComponent = () => {
     return(<>
-        {width > 768 && <PayPalInfo />}
+        {width > 1024 && <PayPalInfo />}
       <div className={Styles.MainView}>
       <MainView />
       <div className={Styles.BottomMargin}/>
@@ -51,7 +51,7 @@ function App() {
 
   <RenderPage />
 
-    {width > 768 &&
+    {width > 1024 &&
       <div className={Styles.FooterView}>
         <Footer />
       </div>
