@@ -1,6 +1,7 @@
 import Styles from "./PayPalQR.module.css";
 import QRCode from "../../assets/paypal/PayPalQR.png";
 import { usePayPalContext } from "../../contexts/usePayPalContext";
+import CloseIcon from "../../assets/svg/CloseIcon.svg?react";
 
 const PayPalQR = () => {
     const { setDisplayQRCode } = usePayPalContext();
@@ -8,7 +9,7 @@ const PayPalQR = () => {
     const CloseButton = () => {
         return (
             <button onClick={() => {setDisplayQRCode(false)}} className={Styles.CloseButton}>
-                {"x"}
+                <CloseIcon className={Styles.CloseIcon}/>
             </button>
         )
     };

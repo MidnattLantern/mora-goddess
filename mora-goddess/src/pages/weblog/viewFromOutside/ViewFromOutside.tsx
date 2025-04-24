@@ -38,6 +38,9 @@ const ViewFromOutside = () => {
             <div className={Styles.LargeNavigationBar}>
                 <ReturnIcon className={Styles.ReturnIcon} onClick={() => {setPageName("main")}}/>
                 <a href="#intro">Intro</a>
+                <a href="#layers">Layers</a>
+                <a href="#light">Light</a>
+                <a href="#colors">Colors</a>
                 <a href="#final">Final</a>
             </div>
         )
@@ -59,7 +62,7 @@ const ViewFromOutside = () => {
                     <img className={Styles.POVScreenshotImageSize} src={POVScreenshotOutside} alt="couldn't load image"/>
                     <p>This is a sequel to the Inside View piece. It follows the same story, now from the outside in. The story unfolds from the moment Yviira shared the screenshots from the web game. <a onClick={() => {setPageName("weblog-view-from-inside")}} className={Styles.LinkToWeblog}>You can read about the View from Inside here.</a></p>
                 </ChapterDiv>
-                <ChapterDiv>
+                <ChapterDiv id="layers">
                     <h1>Establishing the layers</h1>
                     <p>Just like with the inside view, I started by placing the screenshot far back in the layers menu in Clip Studio Paint (CSP), then carefully traced the defining shapes across four separate layers. This screenshot shows the distance much more clearly. Each layer comes with a clipping layer, where I locked pixels to paint in shades, volumes, and crisp edges.</p>
                     <img className={Styles.EstablishLayersImageSize} src={EstablishLayers} alt="couldn't load image"/>
@@ -68,7 +71,7 @@ const ViewFromOutside = () => {
                     <p>Notice the slightly lighter patches here — these are the “shade” layers:</p>
                     <img className={Styles.EstablishShade} src={EstablishShade} alt="couldn't load image"/>
                 </ChapterDiv>
-                <ChapterDiv>
+                <ChapterDiv id="light">
                     <h1>Establishing the light</h1>
                     <p>Before diving into color, I needed to find good lighting to balance and breathe life into the scene. For this POV, I had the fun arena of working with foliage leaves and factoring in the temple's off-center perspective. I imagined the light source resting like during the afternoon, casting light that highlights the temple's walls and creates dramatic shadows from the trees. My first draft turned out too moody for Yviira's taste...</p>
                     <img className={Styles.FirstDraftImageSize} src={FirstDraft} alt="couldn't load image"/>
@@ -77,7 +80,7 @@ const ViewFromOutside = () => {
                     <p>...So, I lightened things up by loosening the tree clusters and refining how the light plays across the scene. Without Blender or fancy 3D tools, I had to rely on traditional spatial intuition, a bit of a puzzle, but I believe it made it look genuine. This was my second and approved take:</p>
                     <img className={Styles.SecondDraftImageSize} src={SecondDraft} alt="couldn't load image"/>
                 </ChapterDiv>
-                <ChapterDiv>
+                <ChapterDiv id="colors">
                     <h1>Adding colors</h1>
                     <p>Similarly to the inside POV, I used the level correction feature to shift the layers away from greyscale toward harmonious colors that carry the atmosphere. Using soft spray and blending brushes, I gently shifted to actual colors without disrupting the atmosphere. A saturation filter sat on top, helping me double-check that the mood stayed intact.</p>
                     <img className={Styles.AddedPaintImageSize} src={AddedPaint} alt="couldn't load image"/>

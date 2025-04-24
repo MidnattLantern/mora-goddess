@@ -151,6 +151,22 @@
     .FinalResultImageSize {
         width: 75vw;
     }
+    .FirstDraftImageSize,
+    .SecondDraftImageSize,
+    .AddedPaintImageSize,
+    .AddedParticlesImageSize,
+    .FinalResultImageSize {
+        width: 80vw;
+        height: auto;
+        border-radius: 5px;
+        object-fit: cover;
+    }
+    .EstablishShade {
+        width: 80vw;
+        height: auto;
+        border-radius: 5px;
+        object-fit: cover;
+    }
 }
 
 @media (max-width: 440px) {

@@ -33,6 +33,9 @@
     height: auto;
 }
 .CloseButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 12.5px;
     right: 12.5px;
@@ -50,4 +53,13 @@
 }
 .CloseButton:active {
     box-shadow: inset 0px 0px 5px var(--dark);
+}
+.CloseIcon {
+    width: 20px;
+    height: 20px;
+    fill: var(--theme);
+    transition: all 0.15s ease;
+}
+.CloseButton:hover .CloseIcon {
+    fill: var(--dark);
 }
