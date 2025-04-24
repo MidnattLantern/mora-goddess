@@ -12,11 +12,6 @@
     box-shadow: 0px 10px 5px var(--dark-transparent);
     margin: 15px;
 }
-@media (max-width: 1024px) {
-.Foundation {
-    width: 95vw;
-    height: 55vw;
-}}
 
 .TitleContainer {
     position: relative;
@@ -30,26 +25,17 @@
     z-index: 1;
     background-color: var(--dark);
 }
-@media (max-width: 1024px) {
-.TitleContainer {
-    width: 10vw;
-}}
-    .TitleText {
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 40px;
-        width: 600px;
-        text-transform: uppercase;
-        transform: rotate(-90deg);
-        user-select: none;
-    }
-    @media (max-width: 1024px) {
-    .TitleText {
-        width: 60vw;
-        font-size: 4vw;
-    }}
+.TitleText {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    width: 600px;
+    text-transform: uppercase;
+    transform: rotate(-90deg);
+    user-select: none;
+}
 
 .ImageAndNavigationContainer {
     width: 100%;
@@ -61,117 +47,186 @@
     background-color: var(--dark);
     backdrop-filter: blur(15px);
 }
-    .ImageContainer {
-        display: flex;
-        margin: 15px;
+.ImageContainer {
+    display: flex;
+    margin: 15px;
+}
+.ImageSize {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 5px;
+}
+.NavigationBarContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.DownloadButton {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 175px;
+    height: 40px;
+    margin: 15px;
+    background-color: var(--dark);
+    border: 1px solid var(--theme);
+    border-radius: 20px;
+    color: var(--theme);
+    font-size: 15px;
+    transition: all 0.1s ease;
+    text-shadow: none;
+    user-select: none;
+}
+.DownloadButton:hover {
+    background-color: var(--theme);
+    color: var(--dark);
+    text-decoration: none;
+}
+.DownloadButton:hover .DownloadIcon {
+    fill: var(--dark);
+}
+.DownloadButton:active {
+    box-shadow: inset 0px 0px 5px var(--dark);
+}
+.LinkToWeblogButton {
+    width: 175px;
+    height: 40px;
+    margin: 15px;
+    background-color: var(--dark);
+    border: 1px solid var(--theme);
+    border-radius: 20px;
+    color: var(--theme);
+    font-size: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    user-select: none;
+}
+.LinkToWeblogButton:hover {
+    color: var(--theme-hover);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.DownloadIcon,
+.TurnPageIcon
+{
+    fill: var(--theme);
+    width: 20px;
+    height: auto;
+    transition: fill 0.2s ease;
+}
+
+@media (max-width: 1024px) {
+    .Foundation {
+        width: 95vw;
+        height: 55vw;
     }
-    @media (max-width: 1024px) {
+    .TitleContainer {
+        width: 10vw;
+    }
+    .TitleText {
+        width: 60vw;
+        font-size: 4vw;
+    }
     .ImageContainer {
         margin: 1.5vw;
-    }}
-    .ImageSize {
-        max-width: 100%;
-        max-height: 100%;
-        width: auto;
-        height: auto;
-        object-fit: contain;
-        border-radius: 5px;
     }
-    @media (max-width: 1024px) {
     .ImageSize {
         border-radius: 0.5vw;
-
-    }}
-    .NavigationBarContainer {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
     }
-    @media (max-width: 1024px) {
     .NavigationBarContainer {
         height: auto;
-    }}
-        .DownloadButton {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            width: 175px;
-            height: 40px;
-            margin: 15px;
-            background-color: var(--dark);
-            border: 1px solid var(--theme);
-            border-radius: 20px;
-            color: var(--theme);
-            font-size: 15px;
-            transition: all 0.1s ease;
-            text-shadow: none;
-            user-select: none;
-        }
-        @media (max-width: 1024px) {
-        .DownloadButton {
-            width: 17.5vw;
-            height: 4vw;
-            margin: 1.5vw;
-            margin-top: 0;
-            border-width: 0.1vw;
-            border-radius: 2vw;
-            font-size: 1.5vw;
-        }
-        }
-        .DownloadButton:hover {
-            background-color: var(--theme);
-            color: var(--dark);
-            text-decoration: none;
-        }
-        .DownloadButton:hover .DownloadIcon {
-            fill: var(--dark);
-        }
-        .DownloadButton:active {
-            box-shadow: inset 0px 0px 5px var(--dark);
-        }
-        .LinkToWeblogButton {
-            width: 175px;
-            height: 40px;
-            margin: 15px;
-            background-color: var(--dark);
-            border: 1px solid var(--theme);
-            border-radius: 20px;
-            color: var(--theme);
-            font-size: 15px;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            user-select: none;
-        }
-        @media (max-width: 1024px) {
-        .LinkToWeblogButton {
-            width: 17.5vw;
-            height: 4vw;
-            margin: 1.5vw;
-            margin-top: 0;
-            border-width: 0.1vw;
-            border-radius: 2vw;
-            font-size: 1.5vw;
-        }}
-        .LinkToWeblogButton:hover {
-            color: var(--theme-hover);
-            text-decoration: underline;
-            cursor: pointer;
-        }
-        .DownloadIcon,
-        .TurnPageIcon
-        {
-            fill: var(--theme);
-            width: 20px;
-            height: auto;
-            transition: fill 0.2s ease; /* <- add this */
-        }
-        @media (max-width: 1024px) {
-        .DownloadIcon,
-        .TurnPageIcon
-        {
-            width: 2vw;
-        }}
+    }
+    .DownloadButton {
+        width: 17.5vw;
+        height: 4vw;
+        margin: 1.5vw;
+        margin-top: 0;
+        border-width: 0.1vw;
+        border-radius: 2vw;
+        font-size: 1.5vw;
+    }
+    .LinkToWeblogButton {
+        width: 17.5vw;
+        height: 4vw;
+        margin: 1.5vw;
+        margin-top: 0;
+        border-width: 0.1vw;
+        border-radius: 2vw;
+        font-size: 1.5vw;
+    }
+    .DownloadIcon,
+    .TurnPageIcon
+    {
+        width: 2vw;
+    }
+}
 
+@media (max-width: 440px) {
+    .Foundation {
+        width: 99vw;
+        height: 100vw;
+        border: none;
+        flex-direction: column;
+        box-shadow: none;
+    }
+    .TitleContainer {
+        width: 100%;
+        height: 25vw;
+        background-color: rgba(0,0,0,0);
+    }
+    .TitleText {
+        width: 100%;
+        transform: rotate(0deg);
+        font-size: 8vw;
+    }
+
+    .ImageAndNavigationContainer {
+        background-color: rgba(0,0,0,0);
+    }
+    .ImageContainer {
+        margin: 0;
+    }
+    .ImageSize {
+        border-radius: 2.5vw;
+        max-width: 90vw;
+        max-height: 90vw;
+    }
+    .NavigationBarContainer {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .DownloadButton {
+        width: 45vw;
+        height: 10vw;
+        margin: 1vw;
+        border-width: 0.2vw;
+        border-radius: 5vw;
+        font-size: 4vw;
+        background-color: rgba(0,0,0,0);
+    }
+    .LinkToWeblogButton {
+        width: 92.75vw;
+        margin: 1vw;
+        height: 10vw;
+        margin: 0px;
+        border-width: 0.2vw;
+        border-radius: 5vw;
+        font-size: 4vw;
+        justify-content: center;
+        background-color: rgba(0,0,0,0);
+    }
+    .DownloadIcon,
+    .TurnPageIcon
+    {
+        width: 5vw;
+        margin-left: 5vw;
+    }
+}
