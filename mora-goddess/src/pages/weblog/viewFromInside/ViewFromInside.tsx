@@ -11,8 +11,10 @@ import LightValues from "../../../assets/weblog/view-from-inside/light-values.pn
 import FinalResult from "../../../assets/downloadable/mora-temple-v1-1mb.jpg";
 import { useState } from "react";
 import { useRenderPageContext } from "../../../contexts/useRenderPageContext";
+import { useWindowSize } from "../../../hooks/useWindowSize";
 
 const ViewFromInside = () => {
+    const { width } = useWindowSize();
     const { setPageName } = useRenderPageContext();
     const [showFreeCamScript, setShowFreeCamScript] = useState<boolean>(false);
 
@@ -23,6 +25,27 @@ const ViewFromInside = () => {
             </div>
         )
     };
+
+    const LargeNavigationBar = () => {
+        return(
+            <div className={Styles.LargeNavigationBar}>
+                <ReturnIcon className={Styles.ReturnIcon} onClick={() => {setPageName("main")}}/>
+                <a href="#intro">Into</a>
+                <a href="#3d-model">3D Model</a>
+                <a href="#unity">Unity</a>
+                <a href="#values">Values</a>
+                <a href="#final">Final</a>
+            </div>
+        )
+    };
+
+    const SmallNavigationBar = () => {
+        return(
+            <div className={Styles.SmallNavigationBar}>
+                <ReturnIcon className={Styles.ReturnIcon} onClick={() => {setPageName("main")}}/>
+            </div>
+        )
+    }
 
     const FreeCamScript = () => {
         return(
@@ -108,16 +131,20 @@ const ViewFromInside = () => {
                 <ChapterDiv id="unity">
                     <h1>POV using Unity</h1>
                     <p>...I've been wanting to learn about Unity and C#, so this was my perfect excuse. Let's make it interactive and let my client move around and pick POVs herself! I exported the Blender model as an .fbx file, imported it into Unity, and wrote a basic script that let players move freely with WASD keys, mouse look, Shift, and Space. Then I built the game as a web app, published the app to GitHub Pages and sent Yviira the link. She was able to move explore and screenshot POVs she liked.</p>
-                    <button className={Styles.ToggleShowScriptButton} onClick={() => {setShowFreeCamScript(!showFreeCamScript)}}>
-                        {showFreeCamScript ? (
-                            <>Hide FreeCam script</>
-                        ) : (
-                            <>Show FreeCam script</>
-                        )}
-                    </button>
-                    <FreeCamScript />
-                    <p>If you're curious, you can check it out yourself with this link: <a href="https://midnattlantern.github.io/display-mora-temple/" target="_blank">midnattlantern.github.io/display-mora-temple</a></p>
-                    <br/>
+
+                    {width > 440 && <>
+                        <button className={Styles.ToggleShowScriptButton} onClick={() => {setShowFreeCamScript(!showFreeCamScript)}}>
+                            {showFreeCamScript ? (
+                                <>Hide FreeCam script</>
+                            ) : (
+                                <>Show FreeCam script</>
+                            )}
+                        </button>
+                        <FreeCamScript />
+                        <p>If you're curious, you can check it out yourself with this link: <a href="https://midnattlantern.github.io/display-mora-temple/" target="_blank">midnattlantern.github.io/display-mora-temple</a></p>
+                        <br/>
+                    </>}
+
                     <p>Yviira sent me these screenshots:</p>
                     <img className={Styles.POVScreenshotImageSize} src={POVScreenshotInside} alt="couldn't load image"/>
                     <img className={Styles.POVScreenshotImageSize} src={POVScreenshotOutside} alt="couldn't load image"/>
@@ -150,20 +177,16 @@ const ViewFromInside = () => {
 
     return(
         <div className={Styles.Foundation}>
-
-            <div className={Styles.NavigationBarContainer}>
-                <div className={Styles.NavigationBar}>
-                    <ReturnIcon className={Styles.ReturnIcon} onClick={() => {setPageName("main")}}/>
-                    <a href="#intro">Into</a>
-                    <a href="#3d-model">3D Model</a>
-                    <a href="#unity">Unity</a>
-                    <a href="#values">Values</a>
-                    <a href="#final">Final</a>
-                </div>
-            </div>
-
             <WeblogContent />
-            <Wallpaper />
+            <div className={`${Styles.NavigationBarContainer} ${width > 1024 ? null : Styles.PushDown}`}>
+                {width > 1024 ?
+                    <LargeNavigationBar/>
+                :
+                    <SmallNavigationBar/>
+                }
+            </div>
+            {width > 440 && <Wallpaper/>}
+
         </div>
     )
 };
