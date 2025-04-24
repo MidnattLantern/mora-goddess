@@ -30,7 +30,7 @@ const ViewFromInside = () => {
         return(
             <div className={Styles.LargeNavigationBar}>
                 <ReturnIcon className={Styles.ReturnIcon} onClick={() => {setPageName("main")}}/>
-                <a href="#intro">Into</a>
+                <a href="#intro">Intro</a>
                 <a href="#3d-model">3D Model</a>
                 <a href="#unity">Unity</a>
                 <a href="#values">Values</a>
@@ -148,7 +148,7 @@ const ViewFromInside = () => {
                     <p>Yviira sent me these screenshots:</p>
                     <img className={Styles.POVScreenshotImageSize} src={POVScreenshotInside} alt="couldn't load image"/>
                     <img className={Styles.POVScreenshotImageSize} src={POVScreenshotOutside} alt="couldn't load image"/>
-                    <p>This weblog is regarding the left image. For the right image, check the weblog regarding View From Outside.</p>
+                    <p>This weblog is regarding the left image. For the right image, <a className={Styles.LinkToWeblog} onClick={() => {setPageName("weblog-view-from-outside")}}>check the weblog regarding View From Outside.</a></p>
                 </ChapterDiv>
                 <ChapterDiv id="values">
                     <h1>Establishing the light values</h1>

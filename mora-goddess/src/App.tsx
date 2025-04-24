@@ -8,6 +8,7 @@ import Wallpaper from "./components/wallpaper/Wallpaper";
 import PayPalInfo from "./components/payPalInfo/PayPalInfo";
 import { useWindowSize } from "./hooks/useWindowSize";
 import WeblogViewFromInside from "./pages/weblog/viewFromInside/ViewFromInside";
+import WeblogViewFromOutside from "./pages/weblog/viewFromOutside/ViewFromOutside";
 
 function App() {
   const { displayQRCode } = usePayPalContext();
@@ -37,6 +38,8 @@ function App() {
         return <MainPageComponent />;
       case "weblog-view-from-inside":
         return <WeblogViewFromInside />;
+        case "weblog-view-from-outside":
+          return <WeblogViewFromOutside />;
       default:
         return <NotFoundComponent />;
     }
