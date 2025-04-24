@@ -57,38 +57,38 @@ const ViewFromOutside = () => {
                 <ChapterDiv id="intro">
                     <h1>The Making of Outside View</h1>
                     <img className={Styles.POVScreenshotImageSize} src={POVScreenshotOutside} alt="couldn't load image"/>
-                    <p>This is a sequel to the Inside View piece. It follows the same story, starting from the point when Yviira sent me screenshots from the web game, after that, the project is expanded to two branches. <a onClick={() => {setPageName("weblog-view-from-inside")}} className={Styles.LinkToWeblog}>You can read about the View from Inside here.</a></p>
+                    <p>This is a sequel to the Inside View piece. It follows the same story, now from the outside in. The story unfolds from the moment Yviira shared the screenshots from the web game. <a onClick={() => {setPageName("weblog-view-from-inside")}} className={Styles.LinkToWeblog}>You can read about the View from Inside here.</a></p>
                 </ChapterDiv>
                 <ChapterDiv>
                     <h1>Establishing the layers</h1>
-                    <p>Same way as I approaced the inside view project, I put the screenshot on a layer furthest back in Clip Studio Paint (CSP) and traced over the defining shapes across four layesr. This screenshot show the distance much more clearly. Each layer has a clipping layer with locked pixels for defining shades, volume and edges.</p>
+                    <p>Just like with the inside view, I started by placing the screenshot far back in the layers menu in Clip Studio Paint (CSP), then carefully traced the defining shapes across four separate layers. This screenshot shows the distance much more clearly. Each layer comes with a clipping layer, where I locked pixels to paint in shades, volumes, and crisp edges.</p>
                     <img className={Styles.EstablishLayersImageSize} src={EstablishLayers} alt="couldn't load image"/>
                     <br/>
                     <br/>
-                    <p>Notice the slightly lighter areas on this image, they make up the "shade" layers:</p>
+                    <p>Notice the slightly lighter patches here — these are the “shade” layers:</p>
                     <img className={Styles.EstablishShade} src={EstablishShade} alt="couldn't load image"/>
                 </ChapterDiv>
                 <ChapterDiv>
                     <h1>Establishing the light</h1>
-                    <p>Before adding color, it was appropriate to establish harmonious light values, to find a lighting that makes sense and provides atmosphere. For this POV, I had foliage leaves to play around with as well as considering how the slight off-center perspective for the temple may affect the lighting. I decided to place the light source to the horizon so that the lighting would cast on the temple, making each part more defined as walls and trees create distinct shadows. The first draft was a bit dark for Yviira's taste...</p>
+                    <p>Before diving into color, I needed to find good lighting to balance and breathe life into the scene. For this POV, I had the fun arena of working with foliage leaves and factoring in the temple's off-center perspective. I imagined the light source resting like during the afternoon, casting light that highlights the temple's walls and creates dramatic shadows from the trees. My first draft turned out too moody for Yviira's taste...</p>
                     <img className={Styles.FirstDraftImageSize} src={FirstDraft} alt="couldn't load image"/>
                     <br/>
                     <br/>
-                    <p>...So I placed the trees not as compact and redefined how lighting works for this POV. I had to figure out the spacial placements of the trees the traditional way without Blender or other 3D methods, so it was a bit of a challenge after getting a bit spoiled by Blender. This was my second and approved take:</p>
+                    <p>...So, I lightened things up by loosening the tree clusters and refining how the light plays across the scene. Without Blender or fancy 3D tools, I had to rely on traditional spatial intuition, a bit of a puzzle, but I believe it made it look genuine. This was my second and approved take:</p>
                     <img className={Styles.SecondDraftImageSize} src={SecondDraft} alt="couldn't load image"/>
                 </ChapterDiv>
                 <ChapterDiv>
-                    <h1>Adding colours</h1>
-                    <p>Similarly to the inside POV, I used the level correction feature to shift away from greyscale to some colour value with atmosphere to each layer. At this stage, there aren't that many layers, around 10 average. Using soft spray and blending brushes, I could gently shift to actual colours without accidentally breaking the atmosphere. I had a saturation filter at top to check from time to time that I didn't ruin the light I've established.</p>
+                    <h1>Adding colors</h1>
+                    <p>Similarly to the inside POV, I used the level correction feature to shift the layers away from greyscale toward harmonious colors that carry the atmosphere. Using soft spray and blending brushes, I gently shifted to actual colors without disrupting the atmosphere. A saturation filter sat on top, helping me double-check that the mood stayed intact.</p>
                     <img className={Styles.AddedPaintImageSize} src={AddedPaint} alt="couldn't load image"/>
                     <br/>
                     <br/>
-                    <p>However, despite looking fine with the saturation filter, it felt flat and empty. It was time to add the floral, vines, and orchard fruits Yviira had requested. I took plenty of inspiration from Ross Tran/ "Ross Draws" as I resonated with his approach of changing the atmosphere with small random colourful dots across the canvas. First, I placed some dots at the trees, second I drew a few flowers and finally gently sprayed the 'Ross Draws' dots across the shadowed sections. I considered adding white dots on the light secions but went for Add Glow ("Colour Dodge" in photoshop) soft brush casting instead. Blinding light on the light sections, Colorful concentrate particles on the shadow sections.</p>
+                    <p>Even though the colors looked good under the saturation filter, the scene felt a bit empty. It was time to add the magic; floral elements, vines, and orchard fruits that Yviira requested. Inspired by Ross Tran/ “Ross Draws”, I resonated with his approach of changing the atmosphere with small fairy-dust-like sparkles across the canvas. I placed some dots at the trees making up the fruits, then a few flowers, and finally dusting the scene with those 'fairy-dust' sparkles. I considered adding white dots on the light sections but went for Add Glow ("Color Dodge" in Photoshop) soft brush casting instead to keep the identity of light and shadow separate.</p>
                     <img className={Styles.AddedParticlesImageSize} src={AddedParticles} alt="couldn't load image" />
                 </ChapterDiv>
                 <ChapterDiv id="final">
                     <h1>Final touches</h1>
-                    <p>I tied the piece together with a level correction filter, making the colours more unified like they belong in the same enviroment, as well as getting that sweet spot of atmospheric lighting/ shadow. Finally, throwing the piece into Affinity Photo to add a gentle chromatic abberation, gaussian blur and noise to kill the overly crisp digital feel. I and yviira was happy about the results:</p>
+                    <p>To wrap it all up, I gave the piece a final pass with a level correction filter, pulling the colors into harmony so everything felt like it belonged in the same environment. Finally, throwing the piece into Affinity Photo to add a gentle chromatic aberration, Gaussian blur and noise, just enough to soften the image and make it feel genuine. I was proud of how it turned out, but most importantly, Yviira's vision had come alive:</p>
                     <img className={Styles.FinalResultImageSize} src={FinalResult} alt="couldn't load image"/>
                 </ChapterDiv>
 

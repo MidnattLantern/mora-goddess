@@ -1,5 +1,5 @@
 Live link: `https://midnattlantern.github.io/mora-goddess/`
-This repository is dedicated to the Mora Goddess project, commissioned by Yviira. Here you can download images as well as read about the progress.
+This repository is dedicated to the Mora Goddess project, commissioned by Yviira. Here you can download images as well as read about the progress. I also made it as proof that I made it and that it's genuine in case it's getting compromised by someone or AI. 
 
 This site is built on the Vite React framwork and published to GitHub pages.
 
