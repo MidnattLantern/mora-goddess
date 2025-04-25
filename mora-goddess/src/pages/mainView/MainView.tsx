@@ -1,6 +1,7 @@
 import Styles from "./MainView.module.css";
 import ProjectViewFromInside from "../../components/projectViewFromInside/ProjectViewFromInside";
 import ProjectViewFromOutside from "../../components/projectViewFromOutside/ProjectViewFromOutside";
+import ProjectBustPortrait from "../../components/projectBustPortrait/ProjectBustPortrait";
 
 const MainView = () => {
 
@@ -11,6 +12,7 @@ const MainView = () => {
             <br/>
             <ProjectViewFromOutside />
             <br/>
+            <ProjectBustPortrait />
         </div>
     </>)
 };
