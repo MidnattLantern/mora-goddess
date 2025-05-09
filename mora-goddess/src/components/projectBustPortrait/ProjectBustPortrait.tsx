@@ -3,6 +3,7 @@ import DownloadIcon from "../../assets/svg/DownloadIcon.svg?react";
 //import TurnPageIcon from "../../assets/svg/TurnPageIcon.svg?react";
 //import { useRenderPageContext } from "../../contexts/useRenderPageContext";
 import VariationFullSketchNoLogo from "../../assets/downloadable/variations/bust-portrait-full-sketch-nologo.png";
+import VariationFullSketchNoLogoSmall from "../../assets/downloadable/variations/bust-portrait-full-sketch-nologo-1mb.jpg";
 
 const ProjectBustPortrait = () => {
 //    const { setPageName } = useRenderPageContext();
@@ -22,6 +23,11 @@ const ProjectBustPortrait = () => {
                         <a className={Styles.DownloadButton} href={VariationFullSketchNoLogo} download={"variation full body sketch"}>
                             <DownloadIcon className={Styles.DownloadIcon}/>
                             {"As png 16mb"}
+                        </a>
+
+                        <a className={Styles.DownloadButton} href={VariationFullSketchNoLogoSmall} download={"variation full body sketch 1mb"}>
+                            <DownloadIcon className={Styles.DownloadIcon}/>
+                            {"As jpg 1mb"}
                         </a>
 
 {/*
