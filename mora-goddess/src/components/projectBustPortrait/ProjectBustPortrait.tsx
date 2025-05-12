@@ -14,77 +14,78 @@ import { useState } from "react";
 const ProjectBustPortrait = () => {
 //    const { setPageName } = useRenderPageContext();
     const [showVariants, setShowVariants] = useState<boolean>(false);
+    const [previewVariant, setPreviewVariant] = useState<string | null >(null);
 
-    const FeaturedImageView = () => {
+    const Image = () => {
         return (
-            <>
-                <div className={Styles.ImageContainer}>
+            <div className={Styles.ImageContainer}>
+                <img className={Styles.ImageSize} src={BustVariationFullNoLogo} alt={"Failed to load image: Bust Variation Full No Logo"}/>
+            </div>
+        )
+    }
 
-                    <div className={Styles.ImageAspect}/>
-                        <img className={Styles.ImageSize} src={BustNoLogo} alt={"Failed to load image: Bust No Logo"}/>
-                    </div>
-                    <div className={Styles.NavigationBarContainer}>
+    const NavigationBar = () => {
+        return (
+            <div className={Styles.NavigationBarContainer}>
+                    <a className={Styles.DownloadButton} href={BustNoLogo} download={"Bust No Logo"}>
+                        <DownloadIcon className={Styles.DownloadIcon}/>
+                        {"As png 8mb"}
+                    </a>
+
+                    <a className={Styles.DownloadButton} href={BustNoLogoSmall} download={"Bust No Logo"}>
+                        <DownloadIcon className={Styles.DownloadIcon}/>
+                        {"As jpg 160kb"}
+                    </a>
+
+                    <button className={Styles.ShowVariantsButton} onClick={() => {setShowVariants(true)}}>
+                        {"Show variants"}
+                    </button>
+            </div>
+        )
+    }
+
+    const VariantsView = () => {
+        return (
+            <div className={Styles.VariantsViewContainer}>
+                <div className={Styles.VariantsMenuContainer}>
+                    <div className={Styles.VariantItem} onMouseEnter={() => {setPreviewVariant(BustNoLogoSmall)}}>
+                        <h1>{"Bust"}</h1>
                         <a className={Styles.DownloadButton} href={BustNoLogo} download={"Bust No Logo"}>
                             <DownloadIcon className={Styles.DownloadIcon}/>
                             {"As png 8mb"}
                         </a>
-
                         <a className={Styles.DownloadButton} href={BustNoLogoSmall} download={"Bust No Logo"}>
                             <DownloadIcon className={Styles.DownloadIcon}/>
                             {"As jpg 160kb"}
                         </a>
-
-                        {/*
-                        <button className={Styles.LinkToWeblogButton} onClick={() => {setPageName("weblog-bust-portrait")}}>
-                            {"Read the Weblog"}
-                            <TurnPageIcon className={Styles.TurnPageIcon}/>
-                        </button>
-                        */}
-
-                        <button className={Styles.VariantsButton} onClick={() => {setShowVariants(true)}}>
-                            {"Variants"}
-                        </button>
+                    </div>
+                    <div className={Styles.VariantItem} onMouseEnter={() => {setPreviewVariant(BustVariationFullNoLogoSmall)}}>
+                        <h1>{"Full Body"}</h1>
+                        <a className={Styles.DownloadButton} href={BustVariationFullNoLogo} download={"Full No Logo"}>
+                            <DownloadIcon className={Styles.DownloadIcon}/>
+                            {"As png 21mb"}
+                        </a>
+                        <a className={Styles.DownloadButton} href={BustVariationFullNoLogoSmall} download={"Full No Logo"}>
+                            <DownloadIcon className={Styles.DownloadIcon}/>
+                            {"As jpg 300kb"}
+                        </a>
+                    </div>
+                    <div className={Styles.VariantItem} onMouseEnter={() => {setPreviewVariant(BustVariationFullSketchNoLogoSmall)}}>
+                        <h1>{"Full Body Sketch"}</h1>
+                        <a className={Styles.DownloadButton} href={BustVariationFullSketchNoLogo} download={"Full Sketch No Logo"}>
+                            <DownloadIcon className={Styles.DownloadIcon}/>
+                            {"As png 11mb"}
+                        </a>
+                        <a className={Styles.DownloadButton} href={BustVariationFullSketchNoLogoSmall} download={"Full Sketch No Logo"}>
+                            <DownloadIcon className={Styles.DownloadIcon}/>
+                            {"As jpg 1mb"}
+                        </a>
+                    </div>
                 </div>
-            </>
-        )
-    };
-
-    const VariantsView = () => {
-        return(
-            <>
-                <h1>{"Bust"}</h1>
-                <a className={Styles.DownloadButton} href={BustNoLogo} download={"Bust No Logo"}>
-                    <DownloadIcon className={Styles.DownloadIcon}/>
-                    {"As png 8mb"}
-                </a>
-                <a className={Styles.DownloadButton} href={BustNoLogoSmall} download={"Bust No Logo"}>
-                    <DownloadIcon className={Styles.DownloadIcon}/>
-                    {"As jpg 160kb"}
-                </a>
-                <br/>
-
-                <h1>{"Full Body"}</h1>
-                <a className={Styles.DownloadButton} href={BustVariationFullNoLogo} download={"Full No Logo"}>
-                    <DownloadIcon className={Styles.DownloadIcon}/>
-                    {"As png 21mb"}
-                </a>
-                <a className={Styles.DownloadButton} href={BustVariationFullNoLogoSmall} download={"Full No Logo"}>
-                    <DownloadIcon className={Styles.DownloadIcon}/>
-                    {"As jpg 300kb"}
-                </a>
-                <br/>
-
-                <h1>{"Full Body Sketch"}</h1>
-                <a className={Styles.DownloadButton} href={BustVariationFullSketchNoLogo} download={"Full Sketch No Logo"}>
-                    <DownloadIcon className={Styles.DownloadIcon}/>
-                    {"As png 11mb"}
-                </a>
-                <a className={Styles.DownloadButton} href={BustVariationFullSketchNoLogoSmall} download={"Full Sketch No Logo"}>
-                    <DownloadIcon className={Styles.DownloadIcon}/>
-                    {"As jpg 1mb"}
-                </a>
-                <br/>
-            </>
+                <div className={Styles.VariantImagePreviewContainer}>
+                    {previewVariant && <img className={Styles.VariantPreviewImageSize} src={previewVariant} alt={""}/>}
+                </div>
+            </div>
         )
     };
 
@@ -99,7 +100,8 @@ const ProjectBustPortrait = () => {
                     {showVariants ? <>
                         <VariantsView />
                     </> : <>
-                        <FeaturedImageView />
+                        <Image />
+                        <NavigationBar />
                     </>}
 
                 </div>
