@@ -8,13 +8,22 @@ import BustVariationFullNoLogo from "../../assets/downloadable/variations/bust-p
 import BustVariationFullNoLogoSmall from "../../assets/downloadable/variations/bust-portrait-full-nologo-300kb.jpg";
 import BustVariationFullSketchNoLogo from "../../assets/downloadable/variations/bust-portrait-full-sketch-nologo-11mb.png";
 import BustVariationFullSketchNoLogoSmall from "../../assets/downloadable/variations/bust-portrait-full-sketch-nologo-1mb.jpg"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 const ProjectBustPortrait = () => {
 //    const { setPageName } = useRenderPageContext();
     const [showVariants, setShowVariants] = useState<boolean>(false);
     const [previewVariant, setPreviewVariant] = useState<string | null >(null);
+    const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => setViewportWidth(window.innerWidth);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    const isMobile = viewportWidth < 440;
 
     const Image = () => {
         return (
@@ -49,7 +58,7 @@ const ProjectBustPortrait = () => {
             <div className={Styles.VariantsViewContainer}>
                 <div className={Styles.VariantsMenuContainer}>
                     <div className={Styles.VariantItem} onMouseEnter={() => {setPreviewVariant(BustNoLogoSmall)}}>
-                        <h1>{"Bust"}</h1>
+                        <h1 className={Styles.VariationTitle}>{"Bust"}</h1>
                         <a className={Styles.DownloadButton} href={BustNoLogo} download={"Bust No Logo"}>
                             <DownloadIcon className={Styles.DownloadIcon}/>
                             {"As png 8mb"}
@@ -60,7 +69,7 @@ const ProjectBustPortrait = () => {
                         </a>
                     </div>
                     <div className={Styles.VariantItem} onMouseEnter={() => {setPreviewVariant(BustVariationFullNoLogoSmall)}}>
-                        <h1>{"Full Body"}</h1>
+                        <h1 className={Styles.VariationTitle}>{"Full Body"}</h1>
                         <a className={Styles.DownloadButton} href={BustVariationFullNoLogo} download={"Full No Logo"}>
                             <DownloadIcon className={Styles.DownloadIcon}/>
                             {"As png 21mb"}
@@ -71,7 +80,7 @@ const ProjectBustPortrait = () => {
                         </a>
                     </div>
                     <div className={Styles.VariantItem} onMouseEnter={() => {setPreviewVariant(BustVariationFullSketchNoLogoSmall)}}>
-                        <h1>{"Full Body Sketch"}</h1>
+                        <h1 className={Styles.VariationTitle}>{"Full Body Sketch"}</h1>
                         <a className={Styles.DownloadButton} href={BustVariationFullSketchNoLogo} download={"Full Sketch No Logo"}>
                             <DownloadIcon className={Styles.DownloadIcon}/>
                             {"As png 11mb"}
@@ -82,9 +91,13 @@ const ProjectBustPortrait = () => {
                         </a>
                     </div>
                 </div>
-                <div className={Styles.VariantImagePreviewContainer}>
-                    {previewVariant && <img className={Styles.VariantPreviewImageSize} src={previewVariant} alt={""}/>}
-                </div>
+
+                {!isMobile && <>
+                    <div className={Styles.VariantImagePreviewContainer}>
+                        {previewVariant && <img className={Styles.VariantPreviewImageSize} src={previewVariant} alt={""}/>}
+                    </div>                
+                </>}
+
             </div>
         )
     };

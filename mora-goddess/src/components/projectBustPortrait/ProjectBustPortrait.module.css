@@ -169,6 +169,10 @@
     border-radius: 5px;
 }
 
+.VariationTitle {
+    font-size: 30px;
+}
+
 @media (max-width: 1024px) {
     .Foundation {
         width: 95vw;
@@ -220,6 +224,24 @@
     .TurnPageIcon
     {
         width: 2vw;
+    }
+    .VariantsMenuContainer {
+    width: 30vw;
+    height: 60vw;
+    }
+    .VariantItem {
+        padding: 1vw;
+    }
+    .VariationTitle {
+        font-size: 2.5vw;
+    }
+    .VariantImagePreviewContainer {
+        width: 57vw;
+        height: 52.5vw;
+        padding: 1.5vw;
+    }
+    .VariantPreviewImageSize {
+        border-radius: 1.5vw;
     }
 }
 
@@ -294,5 +316,9 @@
     {
         width: 4vw;
         margin-left: 4vw;
+    }
+    .VariantsMenuContainer {
+        width: 100%;
+        border: 1px solid var(--light-transparent);
     }
 }
