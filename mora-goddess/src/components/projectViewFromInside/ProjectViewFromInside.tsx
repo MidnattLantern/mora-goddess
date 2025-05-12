@@ -8,6 +8,35 @@ import { useRenderPageContext } from "../../contexts/useRenderPageContext";
 const ProjectViewFromInside = () => {
     const { setPageName } = useRenderPageContext();
 
+    const Image = () => {
+        return(
+            <div className={Styles.ImageContainer}>
+                <img className={Styles.ImageSize} src={SmallViewFromInside} alt={"Failed to load image: View from inside"}/>
+            </div>
+        )
+    };
+
+    const NavigationBar = () => {
+        return(
+            <div>
+                <div className={Styles.NavigationBarContainer}>
+                    <a className={Styles.DownloadButton} href={SmallViewFromInside} download={"view from inside"}>
+                        <DownloadIcon className={Styles.DownloadIcon}/>
+                        {"As jpg 1mb"}
+                    </a>
+                    <a className={Styles.DownloadButton} href={LargeViewFromInside} download={"view from inside"}>
+                        <DownloadIcon className={Styles.DownloadIcon}/>
+                        {"As png 16mb"}
+                    </a>
+                    <button className={Styles.LinkToWeblogButton} onClick={() => {setPageName("weblog-view-from-inside")}}>
+                        {"Read the Weblog"}
+                        <TurnPageIcon className={Styles.TurnPageIcon}/>
+                    </button>
+                </div>
+            </div>
+        )
+    };
+
     return (
         <>
             <div className={Styles.Foundation}>
@@ -16,23 +45,8 @@ const ProjectViewFromInside = () => {
                 </div>
 
                 <div className={Styles.ImageAndNavigationContainer}>
-                    <div className={Styles.ImageContainer}>
-                        <img className={Styles.ImageSize} src={SmallViewFromInside} alt={"Failed to load image: View from inside"}/>
-                    </div>
-                    <div className={Styles.NavigationBarContainer}>
-                        <a className={Styles.DownloadButton} href={SmallViewFromInside} download={"view from inside"}>
-                            <DownloadIcon className={Styles.DownloadIcon}/>
-                            {"As jpg 1mb"}
-                        </a>
-                        <a className={Styles.DownloadButton} href={LargeViewFromInside} download={"view from inside"}>
-                            <DownloadIcon className={Styles.DownloadIcon}/>
-                            {"As png 16mb"}
-                        </a>
-                        <button className={Styles.LinkToWeblogButton} onClick={() => {setPageName("weblog-view-from-inside")}}>
-                            {"Read the Weblog"}
-                            <TurnPageIcon className={Styles.TurnPageIcon}/>
-                        </button>
-                    </div>
+                    <Image />
+                    <NavigationBar />
                 </div>
 
             </div>
