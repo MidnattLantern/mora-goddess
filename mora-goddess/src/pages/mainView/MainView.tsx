@@ -2,6 +2,7 @@ import Styles from "./MainView.module.css";
 import ProjectViewFromInside from "../../components/projectViewFromInside/ProjectViewFromInside";
 import ProjectViewFromOutside from "../../components/projectViewFromOutside/ProjectViewFromOutside";
 import ProjectBustPortrait from "../../components/projectBustPortrait/ProjectBustPortrait";
+import ProjectMoraIcon from "../../components/projectMoraIcon/ProjectMoraIcon";
 
 const MainView = () => {
 
@@ -13,6 +14,8 @@ const MainView = () => {
             <ProjectViewFromOutside />
             <br/>
             <ProjectBustPortrait />
+            <br/>
+            <ProjectMoraIcon />
         </div>
     </>)
 };

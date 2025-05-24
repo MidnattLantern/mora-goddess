@@ -1,0 +1,324 @@
+.Foundation {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: 600px;
+    border: 1px solid var(--light-transparent);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px var(--dark);
+    margin: 15px;
+}
+
+.TitleContainer {
+    position: relative;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100%;
+    color: var(--light);
+    z-index: 1;
+    background-color: var(--dark);
+}
+.TitleText {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    width: 600px;
+    text-transform: uppercase;
+    transform: rotate(-90deg);
+    user-select: none;
+}
+
+.ImageAndNavigationContainer {
+    width: 900px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: end;
+    background-color: var(--dark);
+}
+.ImageContainer {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 900px;
+    height: 500px;
+    padding-top: 15px;
+    padding-right: 15px;
+    overflow: hidden;
+}
+.ImageSize {
+    width: calc(100% - 15px);
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.NavigationBarContainer {
+    display: flex;
+    width: 900px;
+    height: 100px;
+    overflow: hidden;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.DownloadButton,
+.ShowVariantsButton {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 175px;
+    height: 40px;
+    margin: 15px;
+    background-color: var(--dark);
+    border: 1px solid var(--theme);
+    border-radius: 20px;
+    color: var(--theme);
+    font-size: 15px;
+    transition: all 0.1s ease;
+    text-shadow: none;
+    user-select: none;
+}
+.DownloadButton:hover,
+.ShowVariantsButton:hover {
+    background-color: var(--theme);
+    color: var(--dark);
+    text-decoration: none;
+}
+.DownloadButton:hover .DownloadIcon {
+    fill: var(--dark);
+}
+.DownloadButton:active,
+.ShowVariantsButton:active {
+    box-shadow: inset 0px 0px 5px var(--dark);
+}
+.LinkToWeblogButton {
+    width: 175px;
+    height: 40px;
+    margin: 15px;
+    background-color: var(--dark);
+    border: 1px solid var(--theme);
+    border-radius: 20px;
+    color: var(--theme);
+    font-size: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    user-select: none;
+}
+.LinkToWeblogButton:hover {
+    color: var(--theme-hover);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.DownloadIcon,
+.TurnPageIcon
+{
+    fill: var(--theme);
+    width: 20px;
+    height: auto;
+    transition: fill 0.2s ease;
+}
+
+.VariantsViewContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.VariantsMenuContainer {
+    width: 300px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.VariantItem {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--light-transparent);
+}
+
+.VariantImagePreviewContainer {
+    width: 570px;
+    height: 570px;
+    padding: 15px;
+}
+
+.VariantPreviewImageSize {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.VariationTitle {
+    font-size: 30px;
+}
+
+@media (max-width: 1024px) {
+    .Foundation {
+        width: 95vw;
+        height: 55vw;
+    }
+    .TitleContainer {
+        width: 10vw;
+    }
+    .TitleText {
+        width: 60vw;
+        font-size: 4vw;
+    }
+    .ImageAndNavigationContainer {
+        width: 85vw;
+        height: 100%;
+    }
+    .ImageContainer {
+        padding-top: 1.5vw;
+        padding-right: 1.5vw;
+        width: 85vw;
+        height: 45vw;
+    }
+    .ImageSize {
+        border-radius: 0.5vw;
+        width: calc(100% - 1.5vw);
+    }
+    .NavigationBarContainer {
+        width: 85vw;
+        height: 10vw;
+    }
+    .DownloadButton,
+    .ShowVariantsButton {
+        width: 17.5vw;
+        height: 4vw;
+        margin: 1.5vw;
+        border-width: 0.1vw;
+        border-radius: 2vw;
+        font-size: 1.5vw;
+    }
+    .LinkToWeblogButton {
+        width: 17.5vw;
+        height: 4vw;
+        margin: 1.5vw;
+        border-width: 0.1vw;
+        border-radius: 2vw;
+        font-size: 1.5vw;
+    }
+    .DownloadIcon,
+    .TurnPageIcon
+    {
+        width: 2vw;
+    }
+    .VariantsMenuContainer {
+    width: 30vw;
+    height: 60vw;
+    }
+    .VariantItem {
+        padding: 1vw;
+    }
+    .VariationTitle {
+        font-size: 2.5vw;
+    }
+    .VariantImagePreviewContainer {
+        width: 57vw;
+        height: 52.5vw;
+        padding: 1.5vw;
+    }
+    .VariantPreviewImageSize {
+        border-radius: 1.5vw;
+    }
+}
+
+@media (max-width: 440px) {
+    .Foundation {
+        width: 90vw;
+        height: 100vw;
+        margin: 0px;
+        border: none;
+        flex-direction: column;
+        box-shadow: none;
+    }
+    .TitleContainer {
+        width: 100%;
+        height: 25vw;
+        background-color: rgba(0,0,0,0);
+    }
+    .TitleText {
+        width: 100%;
+        transform: rotate(0deg);
+        font-size: 8vw;
+    }
+
+    .ImageAndNavigationContainer {
+        background-color: rgba(0,0,0,0);
+        justify-content: baseline;
+        align-items: center;
+    }
+    .ImageContainer {
+        padding-top: 0px;
+        padding-right: 0px;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+    }
+    .ImageSize {
+        border-radius: 2.5vw;
+        max-width: 90vw;
+        max-height: 90vw;
+    }
+    .NavigationBarContainer {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        height: auto;
+    }
+    .DownloadButton,
+    .ShowVariantsButton {
+        width: 48.5%;
+        height: 8vw;
+        margin: 0px;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+        border-width: 0.2vw;
+        border-radius: 5vw;
+        font-size: 3vw;
+        background-color: rgba(0,0,0,0);
+    }
+    .LinkToWeblogButton {
+        width: 92.75vw;
+        margin: 0px;
+        height: 8vw;
+        margin: 0px;
+        border-width: 0.2vw;
+        border-radius: 5vw;
+        font-size: 3vw;
+        justify-content: center;
+        background-color: rgba(0,0,0,0);
+    }
+    .DownloadIcon,
+    .TurnPageIcon
+    {
+        width: 4vw;
+        margin-left: 4vw;
+    }
+    .VariantsMenuContainer {
+        width: 100%;
+        border: 1px solid var(--light-transparent);
+    }
+}
