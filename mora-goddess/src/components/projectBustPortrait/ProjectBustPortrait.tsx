@@ -1,7 +1,7 @@
 import Styles from "./ProjectBustPortrait.module.css";
 import DownloadIcon from "../../assets/svg/DownloadIcon.svg?react";
-//import TurnPageIcon from "../../assets/svg/TurnPageIcon.svg?react";
-//import { useRenderPageContext } from "../../contexts/useRenderPageContext";
+import TurnPageIcon from "../../assets/svg/TurnPageIcon.svg?react";
+import { useRenderPageContext } from "../../contexts/useRenderPageContext";
 import BustNoLogo from "../../assets/downloadable/bust-portrait-nologo-8mb.png";
 import BustNoLogoSmall from "../../assets/downloadable/bust-portrait-nologo-160kb.jpg";
 import BustVariationFullNoLogo from "../../assets/downloadable/variations/bust-portrait-full-nologo-21mb.png";
@@ -12,7 +12,7 @@ import { useState, useEffect } from "react";
 
 
 const ProjectBustPortrait = () => {
-//    const { setPageName } = useRenderPageContext();
+    const { setPageName } = useRenderPageContext();
     const [showVariants, setShowVariants] = useState<boolean>(false);
     const [previewVariant, setPreviewVariant] = useState<string | null >(null);
     const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
@@ -28,7 +28,7 @@ const ProjectBustPortrait = () => {
     const Image = () => {
         return (
             <div className={Styles.ImageContainer}>
-                <img className={Styles.ImageSize} src={BustVariationFullNoLogo} alt={"Failed to load image: Bust Variation Full No Logo"}/>
+                <img className={Styles.ImageSize} src={BustVariationFullNoLogoSmall} alt={"Failed to load image: Bust Variation Full No Logo"}/>
             </div>
         )
     }
@@ -48,6 +48,11 @@ const ProjectBustPortrait = () => {
 
                     <button className={Styles.ShowVariantsButton} onClick={() => {setShowVariants(true)}}>
                         {"Show variants"}
+                    </button>
+
+                    <button className={Styles.LinkToWeblogButton} onClick={() => {setPageName("weblog-bust-portrait")}}>
+                        {"Read the Weblog"}
+                        <TurnPageIcon className={Styles.TurnPageIcon}/>
                     </button>
             </div>
         )

@@ -9,7 +9,8 @@ import PayPalInfo from "./components/payPalInfo/PayPalInfo";
 import { useWindowSize } from "./hooks/useWindowSize";
 import WeblogViewFromInside from "./pages/weblog/viewFromInside/ViewFromInside";
 import WeblogViewFromOutside from "./pages/weblog/viewFromOutside/ViewFromOutside";
-import BustPortrait from "./pages/weblog/bustPortrait/BustPortrait";
+import WeblogBustPortrait from "./pages/weblog/bustPortrait/BustPortrait";
+import WeblogMoraIcon from "./pages/weblog/moraIcon/MoraIcon";
 
 function App() {
   const { displayQRCode } = usePayPalContext();
@@ -42,7 +43,9 @@ function App() {
         case "weblog-view-from-outside":
           return <WeblogViewFromOutside />;
         case "weblog-bust-portrait":
-          return <BustPortrait />
+          return <WeblogBustPortrait />;
+          case "weblog-mora-icon":
+            return <WeblogMoraIcon />;
       default:
         return <NotFoundComponent />;
     }

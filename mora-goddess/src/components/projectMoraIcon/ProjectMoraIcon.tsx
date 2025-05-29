@@ -1,13 +1,13 @@
 import Styles from "./ProjectMoraIcon.module.css";
 import DownloadIcon from "../../assets/svg/DownloadIcon.svg?react";
-//import TurnPageIcon from "../../assets/svg/TurnPageIcon.svg?react";
-//import { useRenderPageContext } from "../../contexts/useRenderPageContext";
+import TurnPageIcon from "../../assets/svg/TurnPageIcon.svg?react";
+import { useRenderPageContext } from "../../contexts/useRenderPageContext";
 import MoraIcon from "../../assets/downloadable/mora-icon-3mb.png";
 import MoraIconSmall from "../../assets/downloadable/mora-icon-46kb.jpg";
 
 
 const ProjectMoraIcon = () => {
-//    const { setPageName } = useRenderPageContext();
+    const { setPageName } = useRenderPageContext();
 
 
     const NavigationBar = () => {
@@ -22,6 +22,11 @@ const ProjectMoraIcon = () => {
                         <DownloadIcon className={Styles.DownloadIcon}/>
                         {"As jpg 46kb"}
                     </a>
+
+                    <button className={Styles.LinkToWeblogButton} onClick={() => {setPageName("weblog-mora-icon")}}>
+                        {"Read the Weblog"}
+                        <TurnPageIcon className={Styles.TurnPageIcon}/>
+                    </button>
 
             </div>
         )
