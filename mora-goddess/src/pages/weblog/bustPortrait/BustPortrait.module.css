@@ -33,6 +33,14 @@
     backdrop-filter: blur(10px);
 }
 
+.SmallImage{
+    width: calc(50% - 10px);
+    margin: 5px;
+    margin-bottom: 25px;
+    height: auto;
+    border-radius: 3px;
+}
+
 .NavigationBarContainer {
     position: fixed;
     left: 5px;
@@ -100,7 +108,11 @@
     .WeblogContainer {
         width: 100vw;
     }
-    
+    .SmallImage{
+        width: 100%;
+        height: auto;
+        margin: 0px;
+    }
 }
 
 @media (max-width: 440px) {
