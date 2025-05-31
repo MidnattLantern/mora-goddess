@@ -62,6 +62,7 @@ const ProjectBustPortrait = () => {
         return (
             <div className={Styles.VariantsViewContainer}>
                 <div className={Styles.VariantsMenuContainer}>
+                    <button onClick={() => {setShowVariants(false)}}>Hide variants</button> {/* move to a better point */}
                     <div className={Styles.VariantItem} onMouseEnter={() => {setPreviewVariant(BustNoLogoSmall)}}>
                         <h1 className={Styles.VariationTitle}>{"Bust"}</h1>
                         <a className={Styles.DownloadButton} href={BustNoLogo} download={"Bust No Logo"}>

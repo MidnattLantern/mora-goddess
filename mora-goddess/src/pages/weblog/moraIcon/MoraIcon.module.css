@@ -33,6 +33,21 @@
     backdrop-filter: blur(10px);
 }
 
+.SmallImage{
+    width: calc(50% - 10px);
+    margin: 5px;
+    margin-bottom: 25px;
+    height: auto;
+    border-radius: 3px;
+}
+.FirstPhaseImage {
+    width: 100%;
+    margin: 5px;
+    margin-bottom: 25px;
+    height: auto;
+    border-radius: 3px;
+}
+
 .NavigationBarContainer {
     position: fixed;
     left: 5px;
