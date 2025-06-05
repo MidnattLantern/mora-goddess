@@ -3,6 +3,7 @@ import ProjectViewFromInside from "../../components/projectViewFromInside/Projec
 import ProjectViewFromOutside from "../../components/projectViewFromOutside/ProjectViewFromOutside";
 import ProjectBustPortrait from "../../components/projectBustPortrait/ProjectBustPortrait";
 import ProjectMoraIcon from "../../components/projectMoraIcon/ProjectMoraIcon";
+import ProjectShrine from "../../components/projectShrine/ProjectShrine";
 
 const MainView = () => {
 
@@ -16,6 +17,8 @@ const MainView = () => {
             <ProjectBustPortrait />
             <br/>
             <ProjectMoraIcon />
+            <br/>
+            <ProjectShrine />
         </div>
     </>)
 };
