@@ -4,11 +4,14 @@ import ProjectViewFromOutside from "../../components/projectViewFromOutside/Proj
 import ProjectBustPortrait from "../../components/projectBustPortrait/ProjectBustPortrait";
 import ProjectMoraIcon from "../../components/projectMoraIcon/ProjectMoraIcon";
 import ProjectShrine from "../../components/projectShrine/ProjectShrine";
+import ClientCredits from "../../components/clientCredits/ClientCredits";
 
 const MainView = () => {
 
     return(<>
         <div className={Styles.Foundation}>
+            <br/>
+            <ClientCredits />
             <br/>
             <ProjectViewFromInside />
             <br/>
