@@ -18,7 +18,6 @@ import { useState, useEffect } from "react";
 const ProjectShrine = () => {
     const { setPageName } = useRenderPageContext();
     const [showVariants, setShowVariants] = useState<boolean>(false);
-//    const [previewVariant, setPreviewVariant] = useState<string | null >(null); // don't put this here
     const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
 
     const isMobile = viewportWidth < 440;
@@ -58,7 +57,7 @@ const ProjectShrine = () => {
     }
 
     const VariantsView = () => {
-        const [previewVariant, setPreviewVariant] = useState<string | null >(null); // put it here instead
+        const [previewVariant, setPreviewVariant] = useState<string | null >(null);
         return (
             <div className={Styles.VariantsViewContainer}>
 
@@ -95,7 +94,7 @@ const ProjectShrine = () => {
                         </a>
                         <a className={Styles.DownloadButton} href={ShrineLightSmall} download={"Light"}>
                             <DownloadIcon className={Styles.DownloadIcon}/>
-                            {"As jpg 37"}
+                            {"As jpg 37kb"}
                         </a>
                     </div>
 
@@ -109,7 +108,7 @@ const ProjectShrine = () => {
                         </a>
                         <a className={Styles.DownloadButton} href={EmptyShrineLightSmall} download={"Empty Light"}>
                             <DownloadIcon className={Styles.DownloadIcon}/>
-                            {"As jpg 37"}
+                            {"As jpg 37kb"}
                         </a>
                     </div>
 
@@ -123,7 +122,7 @@ const ProjectShrine = () => {
                         </a>
                         <a className={Styles.DownloadButton} href={ShrineDarkSmall} download={"Dark"}>
                             <DownloadIcon className={Styles.DownloadIcon}/>
-                            {"As jpg 33"}
+                            {"As jpg 33kb"}
                         </a>
                     </div>
 
@@ -137,7 +136,7 @@ const ProjectShrine = () => {
                         </a>
                         <a className={Styles.DownloadButton} href={EmptyShrineDarkSmall} download={"Empty Dark"}>
                             <DownloadIcon className={Styles.DownloadIcon}/>
-                            {"As jpg 33"}
+                            {"As jpg 33kb"}
                         </a>
                     </div>
                 </div>
