@@ -1,0 +1,130 @@
+.Foundation {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin-bottom: 100px;
+}
+
+.Wallpaper {
+    position: fixed;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.ImageAppearance{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.Overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.SmallImage{
+    width: calc(50% - 10px);
+    margin: 5px;
+    margin-bottom: 25px;
+    height: auto;
+    border-radius: 3px;
+}
+.FirstPhaseImage {
+    width: 100%;
+    margin: 5px;
+    margin-bottom: 25px;
+    height: auto;
+    border-radius: 3px;
+}
+
+.NavigationBarContainer {
+    position: fixed;
+    left: 5px;
+    width: 120px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.PushDown {
+    width: 100px;
+    align-items: end;
+    left: 1vw;
+    bottom: 5vw;
+}
+    .LargeNavigationBar {
+        width: 100px;
+        height: 500px;
+        border-radius: 50px;
+        border: 0.5px solid var(--light-transparent);
+        box-shadow: 0px 5px 5px var(--dark-transparent);
+        backdrop-filter: blur(50px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transition: all 0.5s ease;
+        z-index: 2;
+    }
+    .SmallNavigationBar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        border: 0.5px solid var(--light-transparent);
+        box-shadow: 0px 5px 5px var(--dark-transparent);
+        backdrop-filter: blur(50px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transition: all 0.5s ease;
+        z-index: 2;
+    }
+    .ReturnIcon {
+        fill: var(--theme);
+        width: 35px;
+        height: auto;
+        filter: drop-shadow(0px 05px 5px var(--dark-transparent));
+    }
+    .ReturnIcon:hover {
+        fill: var(--theme-hover);
+        cursor: pointer;
+    }
+.WeblogContainer {
+    width: 1000px;
+}
+.ChapterDiv {
+    margin: 15px;
+    background-color: var(--dark);
+    padding: 35px;
+    border-radius: 15px;
+}
+
+@media (max-width: 1024px) {
+    .WeblogContainer {
+        width: 100vw;
+    }
+    
+}
+
+@media (max-width: 440px) {
+    .WeblogContainer {
+        width: 100vw;
+    }
+    .ChapterDiv {
+        margin: 0px;
+        background-color: rgba(0,0,0,0);
+        padding: 15px;
+    }
+}

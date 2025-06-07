@@ -14,7 +14,7 @@ import { useState, useEffect } from "react";
 const ProjectBustPortrait = () => {
     const { setPageName } = useRenderPageContext();
     const [showVariants, setShowVariants] = useState<boolean>(false);
-    const [previewVariant, setPreviewVariant] = useState<string | null >(null);
+//    const [previewVariant, setPreviewVariant] = useState<string | null >(null);
     const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
 
     useEffect(() => {
@@ -59,6 +59,7 @@ const ProjectBustPortrait = () => {
     }
 
     const VariantsView = () => {
+        const [previewVariant, setPreviewVariant] = useState<string | null >(null);
         return (
             <div className={Styles.VariantsViewContainer}>
                 <div className={Styles.VariantsMenuContainer}>

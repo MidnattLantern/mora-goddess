@@ -1,5 +1,6 @@
 import Styles from "./ProjectShrine.module.css";
 import DownloadIcon from "../../assets/svg/DownloadIcon.svg?react";
+import TurnPageIcon from "../../assets/svg/TurnPageIcon.svg?react";
 import ShrineTransparent from "../../assets/downloadable/mora-shrine-transparent-610kb.png";
 import EmptyShrineTransparent from "../../assets/downloadable/variations/mora-empty-shrine-transparent-610kb.png";
 import ShrineLightLarge from "../../assets/downloadable/variations/mora-shrine-light-598kb.png";
@@ -10,21 +11,23 @@ import ShrineDarkLarge from "../../assets/downloadable/variations/mora-shrine-da
 import ShrineDarkSmall from "../../assets/downloadable/variations/mora-shrine-dark-33kb.jpg";
 import EmptyShrineDarkLarge from "../../assets/downloadable/variations/mora-empty-shrine-dark-582kb.png";
 import EmptyShrineDarkSmall from "../../assets/downloadable/variations/mora-empty-shrine-dark-33kb.jpg";
+import { useRenderPageContext } from "../../contexts/useRenderPageContext";
 import { useState, useEffect } from "react";
 
 
 const ProjectShrine = () => {
+    const { setPageName } = useRenderPageContext();
     const [showVariants, setShowVariants] = useState<boolean>(false);
-    const [previewVariant, setPreviewVariant] = useState<string | null >(null);
+//    const [previewVariant, setPreviewVariant] = useState<string | null >(null); // don't put this here
     const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+
+    const isMobile = viewportWidth < 440;
 
     useEffect(() => {
         const handleResize = () => setViewportWidth(window.innerWidth);
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
-
-    const isMobile = viewportWidth < 440;
 
     const Image = () => {
         return (
@@ -45,18 +48,25 @@ const ProjectShrine = () => {
                     <button className={Styles.ShowVariantsButton} onClick={() => {setShowVariants(true)}}>
                         {"Show variants"}
                     </button>
+
+                    <button className={Styles.LinkToWeblogButton} onClick={() => {setPageName("weblog-shrine")}}>
+                        {"Read the Weblog"}
+                        <TurnPageIcon className={Styles.TurnPageIcon}/>
+                    </button>
             </div>
         )
     }
 
     const VariantsView = () => {
+        const [previewVariant, setPreviewVariant] = useState<string | null >(null); // put it here instead
         return (
             <div className={Styles.VariantsViewContainer}>
+
                 <div className={Styles.VariantsMenuContainer}>
-                    <button onClick={() => {setShowVariants(false)}}>Hide variants</button> {/* move to a better point */}
+                    <button onClick={() => {setShowVariants(false)}}>Hide variants</button> {/* To be moved */}
 
                     <div className={Styles.VariantItem}
-                    //onMouseEnter={() => {setPreviewVariant(ShrineTransparent)}}
+                    onMouseEnter={() => {setPreviewVariant(ShrineTransparent)}}
                         >
                         <h1 className={Styles.VariationTitle}>{"Transparent"}</h1>
                         <a className={Styles.DownloadButton} href={ShrineTransparent} download={"Transparent"}>
@@ -66,7 +76,7 @@ const ProjectShrine = () => {
                     </div>
 
                     <div className={Styles.VariantItem}
-                    //onMouseEnter={() => {setPreviewVariant(EmptyShrineTransparent)}}
+                    onMouseEnter={() => {setPreviewVariant(EmptyShrineTransparent)}}
                         >
                         <h1 className={Styles.VariationTitle}>{"Empty Transparent"}</h1>
                         <a className={Styles.DownloadButton} href={EmptyShrineTransparent} download={"Empty Transparent"}>
@@ -76,7 +86,7 @@ const ProjectShrine = () => {
                     </div>
 
                     <div className={Styles.VariantItem}
-                    //onMouseEnter={() => {setPreviewVariant(ShrineLightSmall)}}
+                    onMouseEnter={() => {setPreviewVariant(ShrineLightSmall)}}
                         >
                         <h1 className={Styles.VariationTitle}>{"Light"}</h1>
                         <a className={Styles.DownloadButton} href={ShrineLightLarge} download={"Light"}>
@@ -90,7 +100,7 @@ const ProjectShrine = () => {
                     </div>
 
                     <div className={Styles.VariantItem}
-                    //onMouseEnter={() => {setPreviewVariant(EmptyShrineLightLarge)}}
+                    onMouseEnter={() => {setPreviewVariant(EmptyShrineLightLarge)}}
                         >
                         <h1 className={Styles.VariationTitle}>{"Empty Light"}</h1>
                         <a className={Styles.DownloadButton} href={EmptyShrineLightLarge} download={"Empty Light"}>
@@ -104,7 +114,7 @@ const ProjectShrine = () => {
                     </div>
 
                     <div className={Styles.VariantItem}
-                    //onMouseEnter={() => {setPreviewVariant(ShrineDarkSmall)}}
+                    onMouseEnter={() => {setPreviewVariant(ShrineDarkSmall)}}
                         >
                         <h1 className={Styles.VariationTitle}>{"Dark"}</h1>
                         <a className={Styles.DownloadButton} href={ShrineDarkLarge} download={"Dark"}>
@@ -118,7 +128,7 @@ const ProjectShrine = () => {
                     </div>
 
                     <div className={Styles.VariantItem}
-                    //onMouseEnter={() => {setPreviewVariant(EmptyShrineDarkSmall)}}
+                    onMouseEnter={() => {setPreviewVariant(EmptyShrineDarkSmall)}}
                     >
                         <h1 className={Styles.VariationTitle}>{"Empty Dark"}</h1>
                         <a className={Styles.DownloadButton} href={EmptyShrineDarkLarge} download={"Empty Dark"}>
@@ -130,14 +140,15 @@ const ProjectShrine = () => {
                             {"As jpg 33"}
                         </a>
                     </div>
-
                 </div>
+                
 
                 {!isMobile && <>
                     <div className={Styles.VariantImagePreviewContainer}>
                         {previewVariant && <img className={Styles.VariantPreviewImageSize} src={previewVariant} alt={""}/>}
                     </div>                
                 </>}
+            
 
             </div>
         )

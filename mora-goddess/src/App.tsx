@@ -11,6 +11,7 @@ import WeblogViewFromInside from "./pages/weblog/viewFromInside/ViewFromInside";
 import WeblogViewFromOutside from "./pages/weblog/viewFromOutside/ViewFromOutside";
 import WeblogBustPortrait from "./pages/weblog/bustPortrait/BustPortrait";
 import WeblogMoraIcon from "./pages/weblog/moraIcon/MoraIcon";
+import Shrine from "./pages/weblog/shrine/Shrine";
 
 function App() {
   const { displayQRCode } = usePayPalContext();
@@ -44,8 +45,10 @@ function App() {
           return <WeblogViewFromOutside />;
         case "weblog-bust-portrait":
           return <WeblogBustPortrait />;
-          case "weblog-mora-icon":
-            return <WeblogMoraIcon />;
+        case "weblog-mora-icon":
+          return <WeblogMoraIcon />;
+        case "weblog-shrine":
+          return <Shrine />
       default:
         return <NotFoundComponent />;
     }
