@@ -1,10 +1,15 @@
 import Styles from "./ProjectShrine.module.css";
 import DownloadIcon from "../../assets/svg/DownloadIcon.svg?react";
-import ShrineLightSmall from "../../assets/downloadable/mora-shrine-light-37kb.jpg";
-import ShrineLightLarge from "../../assets/downloadable/mora-shrine-light-598kb.png";
-import ShrineDarkSmall from "../../assets/downloadable/variations/mora-shrine dark-33kb.jpg";
+import ShrineTransparent from "../../assets/downloadable/mora-shrine-transparent-610kb.png";
+import EmptyShrineTransparent from "../../assets/downloadable/variations/mora-empty-shrine-transparent-610kb.png";
+import ShrineLightLarge from "../../assets/downloadable/variations/mora-shrine-light-598kb.png";
+import ShrineLightSmall from "../../assets/downloadable/variations/mora-shrine-light-37kb.jpg";
+import EmptyShrineLightLarge from "../../assets/downloadable/variations/mora-empty-shrine-light-598kb.png";
+import EmptyShrineLightSmall from "../../assets/downloadable/variations/mora-empty-shrine-light-37kb.jpg";
 import ShrineDarkLarge from "../../assets/downloadable/variations/mora-shrine-dark-586kb.png";
-import ShrineTransparent from "../../assets/downloadable/variations/mora-shrine-transparent-618kb.png";
+import ShrineDarkSmall from "../../assets/downloadable/variations/mora-shrine-dark-33kb.jpg";
+import EmptyShrineDarkLarge from "../../assets/downloadable/variations/mora-empty-shrine-dark-582kb.png";
+import EmptyShrineDarkSmall from "../../assets/downloadable/variations/mora-empty-shrine-dark-33kb.jpg";
 import { useState, useEffect } from "react";
 
 
@@ -24,7 +29,7 @@ const ProjectShrine = () => {
     const Image = () => {
         return (
             <div className={Styles.ImageContainer}>
-                <img className={Styles.ImageSize} src={ShrineLightSmall} alt={"Failed to load image: Bust Variation Full No Logo"}/>
+                <img className={Styles.ImageSize} src={ShrineTransparent} alt={"Failed to load image: Bust Variation Full No Logo"}/>
             </div>
         )
     }
@@ -32,14 +37,9 @@ const ProjectShrine = () => {
     const NavigationBar = () => {
         return (
             <div className={Styles.NavigationBarContainer}>
-                    <a className={Styles.DownloadButton} href={ShrineLightLarge} download={"Shrine Light"}>
+                    <a className={Styles.DownloadButton} href={ShrineTransparent} download={"Shrine Transparent"}>
                         <DownloadIcon className={Styles.DownloadIcon}/>
-                        {"As png 598kb"}
-                    </a>
-
-                    <a className={Styles.DownloadButton} href={ShrineLightSmall} download={"Shrine Light"}>
-                        <DownloadIcon className={Styles.DownloadIcon}/>
-                        {"As jpg 37kb"}
+                        {"As png 610kb"}
                     </a>
 
                     <button className={Styles.ShowVariantsButton} onClick={() => {setShowVariants(true)}}>
@@ -54,35 +54,83 @@ const ProjectShrine = () => {
             <div className={Styles.VariantsViewContainer}>
                 <div className={Styles.VariantsMenuContainer}>
                     <button onClick={() => {setShowVariants(false)}}>Hide variants</button> {/* move to a better point */}
-                    <div className={Styles.VariantItem} onMouseEnter={() => {setPreviewVariant(ShrineLightSmall)}}>
+
+                    <div className={Styles.VariantItem}
+                    //onMouseEnter={() => {setPreviewVariant(ShrineTransparent)}}
+                        >
+                        <h1 className={Styles.VariationTitle}>{"Transparent"}</h1>
+                        <a className={Styles.DownloadButton} href={ShrineTransparent} download={"Transparent"}>
+                            <DownloadIcon className={Styles.DownloadIcon}/>
+                            {"As png 610kb"}
+                        </a>
+                    </div>
+
+                    <div className={Styles.VariantItem}
+                    //onMouseEnter={() => {setPreviewVariant(EmptyShrineTransparent)}}
+                        >
+                        <h1 className={Styles.VariationTitle}>{"Empty Transparent"}</h1>
+                        <a className={Styles.DownloadButton} href={EmptyShrineTransparent} download={"Empty Transparent"}>
+                            <DownloadIcon className={Styles.DownloadIcon}/>
+                            {"As png 610kb"}
+                        </a>
+                    </div>
+
+                    <div className={Styles.VariantItem}
+                    //onMouseEnter={() => {setPreviewVariant(ShrineLightSmall)}}
+                        >
                         <h1 className={Styles.VariationTitle}>{"Light"}</h1>
-                        <a className={Styles.DownloadButton} href={ShrineLightLarge} download={"Shrine Light"}>
+                        <a className={Styles.DownloadButton} href={ShrineLightLarge} download={"Light"}>
                             <DownloadIcon className={Styles.DownloadIcon}/>
                             {"As png 598kb"}
                         </a>
-                        <a className={Styles.DownloadButton} href={ShrineLightSmall} download={"Shrine Light"}>
+                        <a className={Styles.DownloadButton} href={ShrineLightSmall} download={"Light"}>
                             <DownloadIcon className={Styles.DownloadIcon}/>
-                            {"As jpg 37kb"}
+                            {"As jpg 37"}
                         </a>
                     </div>
-                    <div className={Styles.VariantItem} onMouseEnter={() => {setPreviewVariant(ShrineDarkSmall)}}>
+
+                    <div className={Styles.VariantItem}
+                    //onMouseEnter={() => {setPreviewVariant(EmptyShrineLightLarge)}}
+                        >
+                        <h1 className={Styles.VariationTitle}>{"Empty Light"}</h1>
+                        <a className={Styles.DownloadButton} href={EmptyShrineLightLarge} download={"Empty Light"}>
+                            <DownloadIcon className={Styles.DownloadIcon}/>
+                            {"As png 598kb"}
+                        </a>
+                        <a className={Styles.DownloadButton} href={EmptyShrineLightSmall} download={"Empty Light"}>
+                            <DownloadIcon className={Styles.DownloadIcon}/>
+                            {"As jpg 37"}
+                        </a>
+                    </div>
+
+                    <div className={Styles.VariantItem}
+                    //onMouseEnter={() => {setPreviewVariant(ShrineDarkSmall)}}
+                        >
                         <h1 className={Styles.VariationTitle}>{"Dark"}</h1>
-                        <a className={Styles.DownloadButton} href={ShrineDarkLarge} download={"Shrine Dark"}>
+                        <a className={Styles.DownloadButton} href={ShrineDarkLarge} download={"Dark"}>
                             <DownloadIcon className={Styles.DownloadIcon}/>
-                            {"As png 586mb"}
+                            {"As png 586kb"}
                         </a>
-                        <a className={Styles.DownloadButton} href={ShrineDarkSmall} download={"Shrine Dark"}>
+                        <a className={Styles.DownloadButton} href={ShrineDarkSmall} download={"Dark"}>
                             <DownloadIcon className={Styles.DownloadIcon}/>
-                            {"As jpg 33kb"}
-                        </a>
-                    </div>
-                    <div className={Styles.VariantItem} onMouseEnter={() => {setPreviewVariant(ShrineTransparent)}}>
-                        <h1 className={Styles.VariationTitle}>{"Transparent"}</h1>
-                        <a className={Styles.DownloadButton} href={ShrineTransparent} download={"Shrine Transparent"}>
-                            <DownloadIcon className={Styles.DownloadIcon}/>
-                            {"As png 618mb"}
+                            {"As jpg 33"}
                         </a>
                     </div>
+
+                    <div className={Styles.VariantItem}
+                    //onMouseEnter={() => {setPreviewVariant(EmptyShrineDarkSmall)}}
+                    >
+                        <h1 className={Styles.VariationTitle}>{"Empty Dark"}</h1>
+                        <a className={Styles.DownloadButton} href={EmptyShrineDarkLarge} download={"Empty Dark"}>
+                            <DownloadIcon className={Styles.DownloadIcon}/>
+                            {"As png 582kb"}
+                        </a>
+                        <a className={Styles.DownloadButton} href={EmptyShrineDarkSmall} download={"Empty Dark"}>
+                            <DownloadIcon className={Styles.DownloadIcon}/>
+                            {"As jpg 33"}
+                        </a>
+                    </div>
+
                 </div>
 
                 {!isMobile && <>
