@@ -5,7 +5,7 @@ import { useRenderPageContext } from "../../../contexts/useRenderPageContext";
 import { useWindowSize } from "../../../hooks/useWindowSize";
 import WallpaperImage from "../../../assets/downloadable/mora-icon-46kb.jpg";
 import TempleBirdEye from "../../../assets/weblog/view-from-inside/birdseye-view-1.png";
-import BustPortrait from "../../../assets/downloadable/bust-portrait-nologo-160kb.jpg";
+import BustPortrait from "../../../assets/downloadable/variations/bust-portrait-nologo-160kb.jpg";
 import FirstPhase from "../../../assets/weblog/mora-icon/first-phase.png";
 import SecondPhase from "../../../assets/weblog/mora-icon/second-phase.png";
 import Angle1 from "../../../assets/weblog/mora-icon/angle-1.png";

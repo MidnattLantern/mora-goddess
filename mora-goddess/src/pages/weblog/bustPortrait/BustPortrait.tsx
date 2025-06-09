@@ -14,7 +14,7 @@ import SkinNoGlow from "../../../assets/weblog/bust-portrait/skin-no-glow.png"
 import SkinGlow from "../../../assets/weblog/bust-portrait/skin-glow.png"
 import RedHair from "../../../assets/weblog/bust-portrait/red-hair.png";
 import BlueHair from "../../../assets/weblog/bust-portrait/blue-hair.png";
-import BustPortraitResult from "../../../assets/downloadable/bust-portrait-nologo-8mb.png";
+import BustPortraitResult from "../../../assets/downloadable/variations/bust-portrait-nologo-8mb.png";
 
 const BustPortrait = () => {
     const { width } = useWindowSize();
