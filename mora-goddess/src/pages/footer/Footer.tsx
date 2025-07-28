@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Styles from "./Footer.module.css";
 import { ReactNode } from "react";
 
@@ -18,15 +19,21 @@ const Footer = () => {
         </FooterItem>
 
         <FooterItem>
-            <a className={Styles.FooterItemLink}href="https://github.com/MidnattLantern" target="_blank">{"Developer's GitHub"}</a>
+            <a className={Styles.FooterItemLink} href="https://github.com/MidnattLantern" target="_blank">{"Developer's GitHub"}</a>
         </FooterItem>
 
         <FooterItem>
-            <a className={Styles.FooterItemLink}href="https://www.artstation.com/midnight_lantern" target="_blank">{"Illustrator's ArtStation"}</a>
+            <a className={Styles.FooterItemLink} href="https://www.artstation.com/midnight_lantern" target="_blank">{"Illustrator's ArtStation"}</a>
         </FooterItem>
             
         <FooterItem>
-            <a className={Styles.FooterItemLink}href="https://www.worldanvil.com/w/idoria-yviira" target="_blank">{"Project Idoria"}</a>
+            <a className={Styles.FooterItemLink} href="https://www.worldanvil.com/w/idoria-yviira" target="_blank">{"Project Idoria"}</a>
+        </FooterItem>
+
+        <FooterItem>
+            <Link to="/tech">
+                <a className={Styles.FooterItemLink}>Used Tech</a>
+            </Link>
         </FooterItem>
         </div>
     </>)

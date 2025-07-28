@@ -12,6 +12,8 @@ import WeblogViewFromOutside from "./pages/weblog/viewFromOutside/ViewFromOutsid
 import WeblogBustPortrait from "./pages/weblog/bustPortrait/BustPortrait";
 import WeblogMoraIcon from "./pages/weblog/moraIcon/MoraIcon";
 import Shrine from "./pages/weblog/shrine/Shrine";
+import { Link, Route, Routes } from "react-router-dom";
+import UsedTech from "./pages/usedTech/UsedTech";
 
 function App() {
   const { displayQRCode } = usePayPalContext();
@@ -60,8 +62,18 @@ function App() {
     {displayQRCode ?
       <PayPalQR />
     : null}
-
-  <RenderPage />
+    <Routes>
+      <Route path="/" element={
+        <RenderPage />
+      }/>
+      <Route path="/tech" element={
+        <UsedTech/>
+      }/>
+      <Route path="*" element={<>
+        <h1>404</h1>
+        <Link to="/">Return home</Link>
+        </>}/>
+    </Routes>
 
     {width > 1024 &&
       <div className={Styles.FooterView}>

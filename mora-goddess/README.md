@@ -93,15 +93,15 @@ import { createRoot } from 'react-dom/client'
 
 3. Inside `main.tsx`, import
 ```TypeScript
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { PayPalContextProvider } from './contexts/PayPalContext.tsx';
 ```
 
 4. Inside `main.tsx`, wrap the app with
 ``TypeScript
-<BrowserRouter>
+<HashRouter>
   <App />
-</BrowserRouter>
+</HashRouter>
 ```
 
 5. Routes can be used with the Routes element:
@@ -123,13 +123,25 @@ import { Link } from "react-router-dom";
 </Link>
 ```
 
-Routing has been replaced with a custom RenderPage context, as Routing isn't supported for static Github Pages applications.
-
 Responsive guidelines
 ===
 desktop: more than 1024
 tablet: 1024 or less
 phone: 440 or less
+
+
+Software and technology used:
+===
+Software:
+- Clip Studio Paint EX 1.0
+- Affinity Designer 2
+- Affinity Photo 2
+- Blender
+- Unity
+
+Technology:
+- Vite (React with TypeScript)
+- Github Pages
 
 
 Live link: `https://midnattlantern.github.io/mora-goddess/`

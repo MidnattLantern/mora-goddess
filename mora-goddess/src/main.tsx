@@ -4,12 +4,15 @@ import './index.css'
 import App from './App.tsx'
 import { PayPalContextProvider } from './contexts/PayPalContext.tsx';
 import { RenderPageContextProvider } from './contexts/RenderPageContext.tsx';
+import { HashRouter } from 'react-router-dom';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <RenderPageContextProvider>
       <PayPalContextProvider>
-        <App />
+        <HashRouter>
+          <App />
+        </HashRouter>
       </PayPalContextProvider>
     </RenderPageContextProvider>
   </StrictMode>,
